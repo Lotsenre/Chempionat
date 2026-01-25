@@ -1,0 +1,60 @@
+<Page x:Class="VendingMachineDesktop.Views.Pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Background="{DynamicResource MaterialDesign.Brush.Background}">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0"
+                   Text="Администрирование"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"/>
+
+        <!-- Tab Control -->
+        <TabControl Grid.Row="1"
+                    Style="{StaticResource MaterialDesignFilledTabControl}">
+            <TabItem Header="Торговые автоматы">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="VendingMachine"
+                                                     Width="24"
+                                                     Height="24"
+                                                     HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding}"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+                <Frame x:Name="VendingMachinesFrame"
+                       NavigationUIVisibility="Hidden"/>
+            </TabItem>
+
+            <TabItem Header="Компании">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <materialDesign:PackIcon Kind="Domain"
+                                                     Width="24"
+                                                     Height="24"
+                                                     HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding}"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+                <Frame x:Name="CompaniesFrame"
+                       NavigationUIVisibility="Hidden"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

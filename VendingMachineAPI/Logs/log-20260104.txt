@@ -1,0 +1,49 @@
+2026-01-04 00:24:28.752 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 00:24:29.546 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 00:24:29.551 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 828.1237 ms
+2026-01-04 00:24:30.301 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 308.3087 ms
+2026-01-04 00:24:36.570 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 15.2510 ms
+2026-01-04 00:35:35.431 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 00:35:36.038 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 00:35:36.042 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 612.3194 ms
+2026-01-04 00:35:36.454 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 51.9596 ms
+2026-01-04 00:39:04.576 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 00:39:05.048 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 00:39:05.051 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 476.2421 ms
+2026-01-04 00:39:05.471 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 14.8542 ms
+2026-01-04 05:51:16.106 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 05:51:16.873 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 05:51:16.879 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 788.6220 ms
+2026-01-04 05:51:17.332 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 52.0614 ms
+2026-01-04 05:51:28.704 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 11.0400 ms
+2026-01-04 05:52:43.431 +03:00 [INF] Login attempt for email: test@admin.com
+2026-01-04 05:52:43.451 +03:00 [WRN] User not found: test@admin.com
+2026-01-04 05:52:43.462 +03:00 [INF] HTTP POST /api/auth/login responded 401 in 35.2088 ms
+2026-01-04 05:53:22.379 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 05:53:22.845 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 05:53:22.850 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 472.0317 ms
+2026-01-04 05:53:23.216 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 30.6847 ms
+2026-01-04 05:53:25.745 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-04 05:53:25.748 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-04 05:53:25.787 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 90.5661 ms
+2026-01-04 05:55:58.923 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 05:55:59.390 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 05:55:59.393 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 471.4843 ms
+2026-01-04 05:55:59.756 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 30.8867 ms
+2026-01-04 05:56:02.504 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 7.7306 ms
+2026-01-04 05:56:59.400 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 05:56:59.954 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 05:56:59.957 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 558.1042 ms
+2026-01-04 05:57:00.303 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 35.9934 ms
+2026-01-04 05:57:02.143 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 11.7328 ms
+2026-01-04 05:57:02.924 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.5598 ms
+2026-01-04 05:57:07.405 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.6639 ms
+2026-01-04 05:57:08.782 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.6691 ms
+2026-01-04 05:57:13.233 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 7.8331 ms
+2026-01-04 05:59:06.631 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 05:59:07.070 +03:00 [WRN] Invalid password for user: admin@test.com
+2026-01-04 05:59:07.073 +03:00 [INF] HTTP POST /api/auth/login responded 401 in 443.3980 ms
+2026-01-04 05:59:19.137 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-04 05:59:19.598 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-04 05:59:19.601 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 465.4550 ms
+2026-01-04 05:59:19.962 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 21.1807 ms

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(copy \"C:\\\\Users\\\\Ernesto\\\\Desktop\\\\Chempionat\\\\Общие ресурсы\\\\Logo.png\" \"C:\\\\Users\\\\Ernesto\\\\Desktop\\\\Chempionat\\\\VendingMachineDesktop\\\\Resources\\\\CompanyLogo.png\")",
+      "Bash(dir:*)",
+      "Bash(dotnet build:*)",
+      "Bash(PGPASSWORD=root psql:*)",
+      "Bash(where psql)",
+      "Bash(PGPASSWORD=root \"C:/Program Files/PostgreSQL/18/bin/psql.exe\":*)"
+    ]
+  }
+}

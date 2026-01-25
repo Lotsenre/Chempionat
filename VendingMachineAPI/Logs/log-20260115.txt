@@ -1,0 +1,13 @@
+2026-01-15 12:45:01.065 +03:00 [INF] Starting Vending Machine API
+2026-01-15 12:48:05.224 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-15 12:48:05.684 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-15 12:48:09.425 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-15 12:48:09.458 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 4240.6092 ms
+2026-01-15 12:48:10.239 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 246.2825 ms
+2026-01-15 12:48:15.427 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-15 12:48:15.431 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-15 12:48:15.478 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 202.9833 ms
+2026-01-15 12:48:15.882 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 15.0184 ms
+2026-01-15 12:48:16.601 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 8.3827 ms
+2026-01-15 12:48:18.535 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3936 ms
+2026-01-15 12:48:19.200 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.4450 ms

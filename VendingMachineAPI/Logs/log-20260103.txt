@@ -1,0 +1,192 @@
+2026-01-03 02:06:37.671 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-03 02:06:38.506 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-03 02:06:38.517 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 913.9706 ms
+2026-01-03 02:06:39.722 +03:00 [INF] HTTP GET /api/dashboard responded 401 in 19.5634 ms
+2026-01-03 02:06:41.894 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-03 02:06:42.375 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-03 02:06:42.380 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 489.7583 ms
+2026-01-03 02:06:42.421 +03:00 [INF] HTTP GET /api/dashboard responded 401 in 3.0403 ms
+2026-01-03 02:07:24.434 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-03 02:07:24.897 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-03 02:07:24.900 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 485.5364 ms
+2026-01-03 02:07:24.930 +03:00 [INF] HTTP GET /api/dashboard responded 401 in 2.9342 ms
+2026-01-03 02:09:18.641 +03:00 [INF] HTTP POST /api/Auth/login responded 400 in 108.4995 ms
+2026-01-03 02:09:28.503 +03:00 [INF] HTTP POST /api/auth/register responded 404 in 0.1899 ms
+2026-01-03 02:10:40.117 +03:00 [INF] Starting Vending Machine API
+2026-01-03 02:10:57.787 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-03 02:10:58.859 +03:00 [INF] Registration attempt for email: admin@test.com
+2026-01-03 02:11:00.981 +03:00 [INF] HTTP POST /api/auth/register responded 400 in 3201.0020 ms
+2026-01-03 02:11:10.934 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-03 02:11:11.717 +03:00 [WRN] Invalid password for user: admin@test.com
+2026-01-03 02:11:11.720 +03:00 [INF] HTTP POST /api/auth/login responded 401 in 803.8282 ms
+2026-01-03 02:11:22.109 +03:00 [INF] Registration attempt for email: test@example.com
+2026-01-03 02:11:22.603 +03:00 [INF] User registered successfully: test@example.com
+2026-01-03 02:11:22.618 +03:00 [INF] HTTP POST /api/auth/register responded 200 in 513.7651 ms
+2026-01-03 02:11:32.067 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:11:32.327 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:11:32.332 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 265.4747 ms
+2026-01-03 02:12:44.560 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:12:44.798 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:12:44.799 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 251.8398 ms
+2026-01-03 02:12:45.028 +03:00 [INF] HTTP GET /api/dashboard responded 401 in 12.4862 ms
+2026-01-03 02:12:50.419 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:12:50.657 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:12:50.658 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 312.7022 ms
+2026-01-03 02:12:50.701 +03:00 [INF] HTTP GET /api/dashboard responded 401 in 3.2641 ms
+2026-01-03 02:12:51.680 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:12:51.958 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:12:51.959 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 281.4592 ms
+2026-01-03 02:12:51.983 +03:00 [INF] HTTP GET /api/dashboard responded 401 in 2.7819 ms
+2026-01-03 02:20:02.567 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:20:02.917 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:20:02.918 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 352.8364 ms
+2026-01-03 02:20:03.404 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 203.9566 ms
+2026-01-03 02:21:34.404 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:21:34.684 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:21:34.685 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 289.1595 ms
+2026-01-03 02:21:35.156 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 18.5204 ms
+2026-01-03 02:22:35.623 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:22:35.868 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:22:35.868 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 248.0476 ms
+2026-01-03 02:22:36.122 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 9.5886 ms
+2026-01-03 02:24:44.517 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:24:44.765 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:24:44.765 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 250.1668 ms
+2026-01-03 02:24:45.051 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 12.4838 ms
+2026-01-03 02:26:27.617 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:26:27.983 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:26:27.983 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 368.3138 ms
+2026-01-03 02:26:28.277 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 26.6800 ms
+2026-01-03 02:28:16.548 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:28:16.778 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:28:16.779 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 247.8634 ms
+2026-01-03 02:28:17.029 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 7.5805 ms
+2026-01-03 02:29:59.562 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:29:59.814 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:29:59.815 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 254.8615 ms
+2026-01-03 02:30:33.057 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:30:33.315 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:30:33.316 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 275.1266 ms
+2026-01-03 02:31:53.459 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:31:53.719 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:31:53.720 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 276.2922 ms
+2026-01-03 02:31:53.994 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 22.2127 ms
+2026-01-03 02:32:10.678 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:10.849 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:10.850 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 186.5734 ms
+2026-01-03 02:32:10.985 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 8.3880 ms
+2026-01-03 02:32:11.799 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:11.978 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:11.978 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 179.7300 ms
+2026-01-03 02:32:12.101 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 9.8418 ms
+2026-01-03 02:32:12.616 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:12.798 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:12.799 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 183.7435 ms
+2026-01-03 02:32:12.925 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 5.6910 ms
+2026-01-03 02:32:13.357 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:13.537 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:13.538 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 181.7353 ms
+2026-01-03 02:32:13.657 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 7.4356 ms
+2026-01-03 02:32:13.873 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:14.053 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:14.054 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 183.1117 ms
+2026-01-03 02:32:14.181 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 6.9332 ms
+2026-01-03 02:32:14.903 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:15.086 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:15.086 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 196.3107 ms
+2026-01-03 02:32:15.235 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 26.6489 ms
+2026-01-03 02:32:21.595 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:21.777 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:21.778 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 200.2227 ms
+2026-01-03 02:32:21.911 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 7.7304 ms
+2026-01-03 02:32:24.428 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:32:24.613 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:32:24.613 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 187.8079 ms
+2026-01-03 02:32:24.747 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 8.0461 ms
+2026-01-03 02:34:29.678 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:34:29.908 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:34:29.908 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 231.0911 ms
+2026-01-03 02:34:31.965 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:34:32.232 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:34:32.232 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 267.6696 ms
+2026-01-03 02:34:44.363 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 02:34:44.613 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 02:34:44.613 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 251.5312 ms
+2026-01-03 09:04:20.419 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:04:20.827 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:04:20.830 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 437.0500 ms
+2026-01-03 09:06:34.340 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:06:34.586 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:06:34.587 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 249.6856 ms
+2026-01-03 09:07:55.164 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:07:55.406 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:07:55.406 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 248.0599 ms
+2026-01-03 09:11:37.332 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:11:37.676 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:11:37.677 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 365.6891 ms
+2026-01-03 09:11:40.808 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-03 09:11:40.809 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-03 09:11:40.890 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 213.7661 ms
+2026-01-03 09:11:45.626 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.2261 ms
+2026-01-03 09:11:45.640 +03:00 [INF] HTTP GET /api/companies responded 404 in 1.9705 ms
+2026-01-03 09:13:31.592 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:13:31.821 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:13:31.821 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 231.9545 ms
+2026-01-03 09:13:33.638 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.3223 ms
+2026-01-03 09:13:36.349 +03:00 [INF] HTTP GET /api/companies responded 404 in 7.3495 ms
+2026-01-03 09:13:36.350 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 18.2217 ms
+2026-01-03 09:17:02.765 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:17:03.130 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:17:03.130 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 365.6870 ms
+2026-01-03 09:17:38.531 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 11.4927 ms
+2026-01-03 09:17:40.772 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.0245 ms
+2026-01-03 09:17:40.779 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3796 ms
+2026-01-03 09:21:22.984 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:21:23.218 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:21:23.218 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 235.5021 ms
+2026-01-03 09:21:23.540 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 31.7711 ms
+2026-01-03 09:21:30.557 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 18.4573 ms
+2026-01-03 09:21:34.902 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.4092 ms
+2026-01-03 09:21:34.903 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 17.1061 ms
+2026-01-03 09:27:05.252 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:27:05.597 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:27:05.597 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 345.8964 ms
+2026-01-03 09:27:05.869 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 22.9643 ms
+2026-01-03 09:30:18.749 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:30:18.989 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:30:18.990 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 256.9452 ms
+2026-01-03 09:30:19.704 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 30.5703 ms
+2026-01-03 09:34:45.589 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:34:45.926 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:34:45.927 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 339.3315 ms
+2026-01-03 09:34:46.212 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 26.0016 ms
+2026-01-03 09:40:40.970 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 09:40:41.302 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 09:40:41.303 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 333.8425 ms
+2026-01-03 09:40:41.601 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 28.0636 ms
+2026-01-03 14:23:56.879 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 14:23:57.271 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 14:23:57.272 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 399.8614 ms
+2026-01-03 14:23:58.602 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 46.8119 ms
+2026-01-03 14:24:20.182 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 14.2398 ms
+2026-01-03 14:24:21.291 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 9.3263 ms
+2026-01-03 14:24:24.912 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 25.3773 ms
+2026-01-03 14:25:06.033 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 19.4811 ms
+2026-01-03 14:25:07.613 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 17.5623 ms
+2026-01-03 14:25:08.864 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 10.3660 ms
+2026-01-03 14:39:50.865 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 14:39:51.180 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 14:39:51.180 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 315.8454 ms
+2026-01-03 14:39:51.479 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 25.2603 ms
+2026-01-03 14:48:05.858 +03:00 [INF] Login attempt for email: test@example.com
+2026-01-03 14:48:06.204 +03:00 [INF] User logged in successfully: test@example.com
+2026-01-03 14:48:06.204 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 347.3712 ms
+2026-01-03 14:48:06.503 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 24.6053 ms
+2026-01-03 19:27:31.709 +03:00 [INF] Starting Vending Machine API
+2026-01-03 20:02:40.601 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-03 20:02:41.734 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-03 20:02:45.329 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-03 20:02:45.348 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 4753.2141 ms
+2026-01-03 20:04:03.205 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-03 20:04:03.698 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-03 20:04:03.704 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 506.3778 ms

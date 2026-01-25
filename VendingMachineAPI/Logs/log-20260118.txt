@@ -1,0 +1,232 @@
+2026-01-18 00:36:54.511 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 00:36:55.065 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 00:36:55.072 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 653.5747 ms
+2026-01-18 00:36:55.518 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 47.5673 ms
+2026-01-18 00:36:56.603 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 15.1089 ms
+2026-01-18 00:37:00.027 +03:00 [INF] HTTP GET /api/users responded 404 in 1.3604 ms
+2026-01-18 00:37:05.653 +03:00 [INF] Vending machine updated: "0a9a91bf-0fcc-44ac-b3c2-88a33411413a"
+2026-01-18 00:37:05.666 +03:00 [INF] HTTP PUT /api/vendingmachines/0a9a91bf-0fcc-44ac-b3c2-88a33411413a responded 204 in 71.6241 ms
+2026-01-18 00:37:07.211 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 10.6293 ms
+2026-01-18 00:38:15.483 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.0474 ms
+2026-01-18 00:38:18.969 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 7.7948 ms
+2026-01-18 00:38:29.515 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 18.1654 ms
+2026-01-18 00:38:30.377 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.3393 ms
+2026-01-18 00:38:30.652 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.2954 ms
+2026-01-18 00:38:30.829 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.5900 ms
+2026-01-18 00:38:31.015 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.6662 ms
+2026-01-18 00:38:31.368 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.7409 ms
+2026-01-18 00:38:37.192 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 18.5864 ms
+2026-01-18 00:38:42.702 +03:00 [INF] HTTP GET /api/users responded 404 in 0.2481 ms
+2026-01-18 00:38:48.967 +03:00 [INF] Vending machine updated: "33fee4b4-86f9-45a1-b9db-ff20cd2d134d"
+2026-01-18 00:38:48.969 +03:00 [INF] HTTP PUT /api/vendingmachines/33fee4b4-86f9-45a1-b9db-ff20cd2d134d responded 204 in 15.7873 ms
+2026-01-18 00:38:50.238 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.6142 ms
+2026-01-18 00:38:53.094 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.1860 ms
+2026-01-18 00:38:54.335 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.4718 ms
+2026-01-18 01:23:29.933 +03:00 [INF] HTTP GET /api/companies responded 404 in 1.8200 ms
+2026-01-18 02:21:56.560 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 116.5749 ms
+2026-01-18 02:22:28.801 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 20.6866 ms
+2026-01-18 02:22:30.624 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 21.2953 ms
+2026-01-18 02:22:31.873 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 9.3086 ms
+2026-01-18 02:22:49.466 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.6078 ms
+2026-01-18 02:22:49.892 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.1185 ms
+2026-01-18 02:22:52.506 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.1348 ms
+2026-01-18 02:22:52.714 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.7399 ms
+2026-01-18 02:34:21.428 +03:00 [INF] Starting Vending Machine API
+2026-01-18 02:34:25.053 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-18 02:34:25.339 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 02:34:27.610 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 02:34:27.633 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 2581.0658 ms
+2026-01-18 02:34:28.160 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 179.7481 ms
+2026-01-18 02:37:48.311 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 02:37:48.313 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 02:37:48.339 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 104.6610 ms
+2026-01-18 02:37:48.709 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.5530 ms
+2026-01-18 02:37:49.460 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 8.9057 ms
+2026-01-18 16:00:43.717 +03:00 [INF] Starting Vending Machine API
+2026-01-18 16:01:09.639 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-18 16:01:09.875 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 16:01:11.851 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 16:01:11.869 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 2230.8835 ms
+2026-01-18 16:01:12.403 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 158.9989 ms
+2026-01-18 16:01:13.640 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:01:13.642 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:01:13.659 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 72.4245 ms
+2026-01-18 16:01:41.428 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.4205 ms
+2026-01-18 16:09:46.948 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 16:09:47.304 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 16:09:47.306 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 359.9584 ms
+2026-01-18 16:09:47.612 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 19.3964 ms
+2026-01-18 16:09:48.992 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.0932 ms
+2026-01-18 16:09:49.717 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3053 ms
+2026-01-18 16:09:51.782 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3519 ms
+2026-01-18 16:18:33.747 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 16:18:34.183 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 16:18:34.185 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 438.4128 ms
+2026-01-18 16:18:34.517 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 30.6430 ms
+2026-01-18 16:18:35.604 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 7.1962 ms
+2026-01-18 16:18:35.852 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.1952 ms
+2026-01-18 16:18:38.283 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.3279 ms
+2026-01-18 16:18:38.723 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.4307 ms
+2026-01-18 16:18:40.675 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3290 ms
+2026-01-18 16:19:05.951 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3423 ms
+2026-01-18 16:23:54.862 +03:00 [INF] Starting Vending Machine API
+2026-01-18 16:24:07.296 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-18 16:24:07.560 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 16:24:10.356 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 16:24:10.386 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 3093.2058 ms
+2026-01-18 16:24:10.988 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 244.1703 ms
+2026-01-18 16:24:12.100 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:24:12.102 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:24:12.135 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 130.3473 ms
+2026-01-18 16:24:12.452 +03:00 [INF] HTTP GET /api/companies responded 200 in 85.9151 ms
+2026-01-18 16:24:13.350 +03:00 [INF] HTTP GET /api/companies responded 200 in 5.8681 ms
+2026-01-18 16:26:00.855 +03:00 [INF] Starting Vending Machine API
+2026-01-18 16:26:16.732 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-18 16:26:16.966 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 16:26:19.338 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 16:26:19.370 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 2639.4881 ms
+2026-01-18 16:26:19.961 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 233.5706 ms
+2026-01-18 16:26:20.912 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:26:20.914 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:26:20.937 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 112.3991 ms
+2026-01-18 16:26:21.381 +03:00 [INF] HTTP GET /api/companies responded 200 in 64.0966 ms
+2026-01-18 16:26:22.075 +03:00 [INF] HTTP GET /api/companies responded 200 in 9.2465 ms
+2026-01-18 16:26:48.393 +03:00 [INF] HTTP GET /api/companies responded 200 in 4.3410 ms
+2026-01-18 16:26:53.791 +03:00 [INF] HTTP POST /api/companies/seed responded 200 in 261.1747 ms
+2026-01-18 16:26:59.193 +03:00 [INF] HTTP GET /api/companies responded 200 in 18.0375 ms
+2026-01-18 16:27:14.441 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 8.1779 ms
+2026-01-18 16:27:14.780 +03:00 [INF] HTTP GET /api/companies responded 200 in 2.6814 ms
+2026-01-18 16:27:16.181 +03:00 [INF] HTTP GET /api/companies responded 200 in 2.5302 ms
+2026-01-18 16:27:20.639 +03:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO companies (id, address, contact_info, created_at, name, notes, parent_company_id, updated_at, working_since)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-01-18 16:27:20.667 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'VendingMachineAPI.Data.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-01-18 16:27:20.677 +03:00 [ERR] Error creating company
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at VendingMachineAPI.Controllers.CompaniesController.CreateCompany(CompanyDto dto) in C:\Users\Ernesto\Desktop\Chempionat\VendingMachineAPI\Controllers\CompaniesController.cs:line 101
+2026-01-18 16:27:20.690 +03:00 [ERR] HTTP POST /api/companies responded 500 in 84.0472 ms
+2026-01-18 16:30:49.141 +03:00 [INF] Starting Vending Machine API
+2026-01-18 16:30:59.245 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-18 16:30:59.548 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 16:31:01.898 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 16:31:01.922 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 2680.0783 ms
+2026-01-18 16:31:02.452 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 218.4387 ms
+2026-01-18 16:31:04.080 +03:00 [INF] HTTP GET /api/companies responded 200 in 273.1693 ms
+2026-01-18 16:31:05.841 +03:00 [INF] HTTP GET /api/companies responded 200 in 7.2436 ms
+2026-01-18 16:31:10.652 +03:00 [INF] HTTP POST /api/companies responded 201 in 456.5240 ms
+2026-01-18 16:31:10.670 +03:00 [INF] HTTP GET /api/companies responded 200 in 3.7230 ms
+2026-01-18 16:31:13.621 +03:00 [INF] HTTP GET /api/companies responded 200 in 2.8503 ms
+2026-01-18 16:31:15.981 +03:00 [INF] HTTP PUT /api/companies/87101e8a-7db0-4fef-9937-a6b234aa351c responded 204 in 25.0319 ms
+2026-01-18 16:31:15.997 +03:00 [INF] HTTP GET /api/companies responded 200 in 3.6493 ms
+2026-01-18 16:31:18.994 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:31:18.996 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-18 16:31:19.020 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 38.0345 ms
+2026-01-18 16:31:20.640 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.0007 ms
+2026-01-18 16:31:45.443 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.1312 ms
+2026-01-18 16:31:46.180 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.3945 ms
+2026-01-18 16:40:39.221 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 16:40:39.622 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 16:40:39.624 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 403.8052 ms
+2026-01-18 16:40:39.919 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 10.0335 ms
+2026-01-18 16:40:40.641 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.7038 ms
+2026-01-18 16:40:45.918 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.0008 ms
+2026-01-18 16:40:46.299 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 5.1392 ms
+2026-01-18 16:40:48.632 +03:00 [INF] HTTP GET /api/companies responded 200 in 2.4874 ms
+2026-01-18 16:40:48.921 +03:00 [INF] HTTP GET /api/companies responded 200 in 1.9025 ms
+2026-01-18 16:40:49.349 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.6924 ms
+2026-01-18 16:40:50.682 +03:00 [INF] HTTP GET /api/companies responded 200 in 2.2882 ms
+2026-01-18 16:40:51.199 +03:00 [INF] HTTP GET /api/companies responded 200 in 2.0453 ms
+2026-01-18 16:42:31.360 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.4818 ms
+2026-01-18 16:42:32.735 +03:00 [INF] HTTP GET /api/companies responded 200 in 3.2715 ms
+2026-01-18 22:57:35.571 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 22:57:36.050 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 22:57:36.055 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 566.4488 ms
+2026-01-18 22:57:36.353 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 35.9627 ms
+2026-01-18 22:57:37.412 +03:00 [INF] HTTP GET /api/companies responded 200 in 13.9557 ms
+2026-01-18 22:57:37.726 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 7.7592 ms
+2026-01-18 22:57:39.245 +03:00 [INF] HTTP GET /api/companies responded 200 in 8.6357 ms
+2026-01-18 22:57:39.269 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 8.2440 ms
+2026-01-18 23:04:17.060 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-18 23:04:17.358 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-18 23:04:17.360 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 303.0659 ms
+2026-01-18 23:04:17.667 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 11.2803 ms
+2026-01-18 23:04:18.540 +03:00 [INF] HTTP GET /api/companies responded 200 in 4.9754 ms
+2026-01-18 23:04:18.611 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.6835 ms

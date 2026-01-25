@@ -1,0 +1,31 @@
+2026-01-22 12:06:41.878 +03:00 [INF] Starting Vending Machine API
+2026-01-22 12:07:00.543 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-22 12:07:01.004 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-22 12:07:05.627 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-22 12:07:05.671 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 5135.2143 ms
+2026-01-22 12:07:06.666 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 362.3430 ms
+2026-01-22 12:07:17.807 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 165.5061 ms
+2026-01-22 12:07:48.233 +03:00 [INF] HTTP GET /api/companies responded 200 in 189.2607 ms
+2026-01-22 12:07:48.309 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-22 12:07:48.313 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-22 12:07:48.354 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 74.4009 ms
+2026-01-22 12:08:26.856 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 9.8645 ms
+2026-01-22 12:08:31.864 +03:00 [INF] HTTP GET /api/users responded 404 in 0.8566 ms
+2026-01-22 12:09:01.229 +03:00 [INF] Vending machine updated: "4daae871-71ac-44da-8b58-dcf1a2ae907a"
+2026-01-22 12:09:01.234 +03:00 [INF] HTTP PUT /api/vendingmachines/4daae871-71ac-44da-8b58-dcf1a2ae907a responded 204 in 293.6186 ms
+2026-01-22 12:09:03.569 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 14.8145 ms
+2026-01-22 12:09:16.558 +03:00 [INF] HTTP GET /api/companies responded 200 in 5.7606 ms
+2026-01-22 12:09:26.193 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 12.2649 ms
+2026-01-22 12:11:33.470 +03:00 [INF] Login attempt for email: lotsenre1703@gmail.com
+2026-01-22 12:11:33.833 +03:00 [WRN] Invalid password for user: lotsenre1703@gmail.com
+2026-01-22 12:11:33.841 +03:00 [INF] HTTP POST /api/auth/login responded 401 in 375.5680 ms
+2026-01-22 12:12:13.468 +03:00 [INF] Login attempt for email: lotsenre1703@gmail.com
+2026-01-22 12:12:13.887 +03:00 [WRN] Invalid password for user: lotsenre1703@gmail.com
+2026-01-22 12:12:13.891 +03:00 [INF] HTTP POST /api/auth/login responded 401 in 423.8240 ms
+2026-01-22 12:13:15.372 +03:00 [INF] Registration attempt for email: ghjfwfhf@erzi.me
+2026-01-22 12:13:15.780 +03:00 [INF] User registered successfully: ghjfwfhf@erzi.me
+2026-01-22 12:13:15.787 +03:00 [INF] HTTP POST /api/auth/register responded 200 in 443.3494 ms
+2026-01-22 12:13:24.186 +03:00 [INF] Login attempt for email: ghjfwfhf@erzi.me
+2026-01-22 12:13:24.523 +03:00 [INF] User logged in successfully: ghjfwfhf@erzi.me
+2026-01-22 12:13:24.526 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 341.4676 ms
+2026-01-22 12:13:24.673 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 14.3265 ms

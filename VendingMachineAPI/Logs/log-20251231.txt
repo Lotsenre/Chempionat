@@ -1,0 +1,58 @@
+2025-12-31 22:25:54.143 +03:00 [INF] Starting Vending Machine API
+2025-12-31 22:30:31.959 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-12-31 22:30:35.672 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:30:38.216 +03:00 [WRN] Invalid password for user: leonid_53@example.com
+2025-12-31 22:30:38.235 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 6286.1457 ms
+2025-12-31 22:33:18.345 +03:00 [INF] HTTP GET /api/Auth/login responded 405 in 3.6379 ms
+2025-12-31 22:34:13.016 +03:00 [INF] HTTP GET /api/VendingMachines responded 401 in 29.4991 ms
+2025-12-31 22:34:19.449 +03:00 [INF] HTTP GET /api/VendingMachines responded 401 in 6.2120 ms
+2025-12-31 22:35:59.396 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:36:00.337 +03:00 [INF] User logged in successfully: leonid_53@example.com
+2025-12-31 22:36:00.350 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 959.7932 ms
+2025-12-31 22:36:24.533 +03:00 [INF] HTTP GET /api/VendingMachines responded 401 in 2.1674 ms
+2025-12-31 22:36:42.539 +03:00 [INF] HTTP GET /api/Dashboard responded 401 in 0.6283 ms
+2025-12-31 22:37:05.199 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:37:05.805 +03:00 [INF] User logged in successfully: leonid_53@example.com
+2025-12-31 22:37:05.806 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 611.0013 ms
+2025-12-31 22:37:11.568 +03:00 [INF] HTTP GET /api/Auth/login responded 405 in 0.3659 ms
+2025-12-31 22:40:37.684 +03:00 [INF] HTTP GET /api/Dashboard responded 401 in 0.4662 ms
+2025-12-31 22:41:00.885 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:41:01.432 +03:00 [WRN] Invalid password for user: leonid_53@example.com
+2025-12-31 22:41:01.433 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 550.1762 ms
+2025-12-31 22:41:12.668 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:41:13.120 +03:00 [INF] User logged in successfully: leonid_53@example.com
+2025-12-31 22:41:13.122 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 455.5628 ms
+2025-12-31 22:41:54.016 +03:00 [INF] HTTP GET /api/VendingMachines responded 401 in 0.4875 ms
+2025-12-31 22:43:31.343 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:43:31.810 +03:00 [INF] User logged in successfully: leonid_53@example.com
+2025-12-31 22:43:31.811 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 468.4787 ms
+2025-12-31 22:43:58.786 +03:00 [INF] HTTP GET /api/Dashboard responded 200 in 264.1855 ms
+2025-12-31 22:47:28.388 +03:00 [INF] Login attempt for email: admin@test.com
+2025-12-31 22:47:28.721 +03:00 [WRN] Invalid password for user: admin@test.com
+2025-12-31 22:47:28.722 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 349.2562 ms
+2025-12-31 22:48:16.715 +03:00 [INF] Login attempt for email: admin@test.com
+2025-12-31 22:48:16.955 +03:00 [WRN] Invalid password for user: admin@test.com
+2025-12-31 22:48:16.956 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 241.7729 ms
+2025-12-31 22:48:47.911 +03:00 [INF] Login attempt for email: admin@test.com
+2025-12-31 22:48:48.135 +03:00 [WRN] Invalid password for user: admin@test.com
+2025-12-31 22:48:48.136 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 225.5210 ms
+2025-12-31 22:48:59.742 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:48:59.969 +03:00 [WRN] Invalid password for user: leonid_53@example.com
+2025-12-31 22:48:59.970 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 228.7230 ms
+2025-12-31 22:49:27.267 +03:00 [INF] Login attempt for email: admin@test.com
+2025-12-31 22:49:27.494 +03:00 [WRN] Invalid password for user: admin@test.com
+2025-12-31 22:49:27.495 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 229.6937 ms
+2025-12-31 22:49:39.259 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:49:39.488 +03:00 [WRN] Invalid password for user: leonid_53@example.com
+2025-12-31 22:49:39.489 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 231.3565 ms
+2025-12-31 22:49:54.264 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:49:54.496 +03:00 [WRN] Invalid password for user: leonid_53@example.com
+2025-12-31 22:49:54.496 +03:00 [INF] HTTP POST /api/Auth/login responded 401 in 233.6408 ms
+2025-12-31 22:50:49.922 +03:00 [INF] Login attempt for email: leonid_53@example.com
+2025-12-31 22:50:50.386 +03:00 [INF] User logged in successfully: leonid_53@example.com
+2025-12-31 22:50:50.386 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 465.5993 ms
+2025-12-31 22:51:31.344 +03:00 [INF] Login attempt for email: admin@test.com
+2025-12-31 22:51:31.810 +03:00 [INF] User logged in successfully: admin@test.com
+2025-12-31 22:51:31.811 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 467.7386 ms
+2025-12-31 22:51:58.212 +03:00 [INF] Vending machine created: "33fee4b4-86f9-45a1-b9db-ff20cd2d134d"
+2025-12-31 22:51:58.291 +03:00 [INF] HTTP POST /api/VendingMachines responded 201 in 284.6019 ms

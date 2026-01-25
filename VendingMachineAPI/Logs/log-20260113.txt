@@ -1,0 +1,18 @@
+2026-01-13 12:56:10.079 +03:00 [INF] Starting Vending Machine API
+2026-01-13 12:56:39.923 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-13 12:56:40.335 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-13 12:56:43.725 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-13 12:56:43.763 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 3840.7833 ms
+2026-01-13 12:56:44.411 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 255.3171 ms
+2026-01-13 13:00:00.443 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-13 13:00:00.446 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-13 13:00:00.480 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 152.9627 ms
+2026-01-13 13:00:00.976 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.9215 ms
+2026-01-13 13:00:02.834 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.9996 ms
+2026-01-13 13:00:03.228 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 14.5555 ms
+2026-01-13 13:06:51.824 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 90.2668 ms
+2026-01-13 14:32:46.063 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-13 14:32:46.870 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-13 14:32:46.878 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 963.4821 ms
+2026-01-13 14:32:47.345 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 39.7168 ms
+2026-01-13 14:32:49.488 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 10.4976 ms

@@ -1,0 +1,126 @@
+2026-01-20 00:02:49.485 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 326.5839 ms
+2026-01-20 00:02:57.781 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 13.4371 ms
+2026-01-20 00:03:11.996 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-20 00:03:12.356 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-20 00:03:12.356 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 370.5070 ms
+2026-01-20 00:03:12.420 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 8.9691 ms
+2026-01-20 00:10:36.678 +03:00 [INF] HTTP GET /api/vendingmachines/89c05e76-6b7e-4d72-b97c-62ecb96b1370 responded 200 in 318.4690 ms
+2026-01-20 00:10:44.846 +03:00 [INF] Vending machine updated: "89c05e76-6b7e-4d72-b97c-62ecb96b1370"
+2026-01-20 00:10:44.850 +03:00 [INF] HTTP PUT /api/vendingmachines/89c05e76-6b7e-4d72-b97c-62ecb96b1370 responded 204 in 305.0118 ms
+2026-01-20 00:10:44.925 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.9281 ms
+2026-01-20 00:10:48.703 +03:00 [INF] HTTP GET /api/vendingmachines/53e2ec2e-d407-4e9a-a1d9-5a9501e81ede responded 200 in 5.9073 ms
+2026-01-20 00:10:52.511 +03:00 [INF] Vending machine updated: "53e2ec2e-d407-4e9a-a1d9-5a9501e81ede"
+2026-01-20 00:10:52.511 +03:00 [INF] HTTP PUT /api/vendingmachines/53e2ec2e-d407-4e9a-a1d9-5a9501e81ede responded 204 in 11.2985 ms
+2026-01-20 00:10:52.552 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.9729 ms
+2026-01-20 00:10:55.302 +03:00 [INF] HTTP GET /api/vendingmachines/e1d62e6a-5427-4dda-8209-bb584bfbc9e5 responded 200 in 5.4057 ms
+2026-01-20 00:10:58.658 +03:00 [INF] Vending machine updated: "e1d62e6a-5427-4dda-8209-bb584bfbc9e5"
+2026-01-20 00:10:58.659 +03:00 [INF] HTTP PUT /api/vendingmachines/e1d62e6a-5427-4dda-8209-bb584bfbc9e5 responded 204 in 7.7338 ms
+2026-01-20 00:10:58.719 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.3444 ms
+2026-01-20 00:11:08.090 +03:00 [INF] HTTP GET /api/vendingmachines/e1d62e6a-5427-4dda-8209-bb584bfbc9e5 responded 200 in 5.3801 ms
+2026-01-20 00:11:09.265 +03:00 [INF] Vending machine updated: "e1d62e6a-5427-4dda-8209-bb584bfbc9e5"
+2026-01-20 00:11:09.265 +03:00 [INF] HTTP PUT /api/vendingmachines/e1d62e6a-5427-4dda-8209-bb584bfbc9e5 responded 204 in 6.3859 ms
+2026-01-20 00:11:09.326 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.9400 ms
+2026-01-20 00:11:11.808 +03:00 [INF] HTTP GET /api/vendingmachines/a87bfe4c-48b7-4290-abc7-480052dab75a responded 200 in 4.0996 ms
+2026-01-20 00:11:19.971 +03:00 [INF] Vending machine updated: "a87bfe4c-48b7-4290-abc7-480052dab75a"
+2026-01-20 00:11:19.972 +03:00 [INF] HTTP PUT /api/vendingmachines/a87bfe4c-48b7-4290-abc7-480052dab75a responded 204 in 9.3084 ms
+2026-01-20 00:11:20.031 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.8799 ms
+2026-01-20 00:11:23.064 +03:00 [INF] HTTP GET /api/vendingmachines/a87bfe4c-48b7-4290-abc7-480052dab75a responded 200 in 3.5212 ms
+2026-01-20 00:11:24.561 +03:00 [INF] Vending machine updated: "a87bfe4c-48b7-4290-abc7-480052dab75a"
+2026-01-20 00:11:24.561 +03:00 [INF] HTTP PUT /api/vendingmachines/a87bfe4c-48b7-4290-abc7-480052dab75a responded 204 in 5.2310 ms
+2026-01-20 00:11:24.598 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.1216 ms
+2026-01-20 00:13:20.005 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.3863 ms
+2026-01-20 00:13:44.675 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-20 00:13:44.675 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-20 00:13:44.683 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 51.2474 ms
+2026-01-20 00:14:25.685 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 7.0889 ms
+2026-01-20 00:14:27.151 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.3732 ms
+2026-01-20 00:14:50.284 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.0786 ms
+2026-01-20 00:15:40.936 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 49.6594 ms
+2026-01-20 00:17:14.934 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.7520 ms
+2026-01-20 10:55:40.884 +03:00 [INF] Starting Vending Machine API
+2026-01-20 10:56:36.556 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-20 10:56:36.836 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-20 10:56:38.841 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-20 10:56:38.867 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 2315.5346 ms
+2026-01-20 10:56:39.072 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-20 10:56:39.076 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-20 10:56:39.126 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 165.0441 ms
+2026-01-20 11:03:50.318 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 146.3561 ms
+2026-01-20 11:04:29.578 +03:00 [INF] Registration attempt for email: s2304992@edu.misis.ru
+2026-01-20 11:04:29.890 +03:00 [INF] User registered successfully: s2304992@edu.misis.ru
+2026-01-20 11:04:29.896 +03:00 [INF] HTTP POST /api/auth/register responded 200 in 326.6091 ms
+2026-01-20 11:04:36.154 +03:00 [INF] Login attempt for email: s2304992@edu.misis.ru
+2026-01-20 11:04:36.295 +03:00 [INF] User logged in successfully: s2304992@edu.misis.ru
+2026-01-20 11:04:36.296 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 142.7889 ms
+2026-01-20 11:04:36.337 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.7828 ms
+2026-01-20 11:08:12.264 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.5862 ms
+2026-01-20 11:11:20.789 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 48.8465 ms
+2026-01-20 11:12:05.963 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.2558 ms
+2026-01-20 11:15:50.391 +03:00 [INF] HTTP GET /api/vendingmachines/33fee4b4-86f9-45a1-b9db-ff20cd2d134d responded 200 in 32.9178 ms
+2026-01-20 11:16:02.355 +03:00 [INF] Vending machine updated: "33fee4b4-86f9-45a1-b9db-ff20cd2d134d"
+2026-01-20 11:16:02.361 +03:00 [INF] HTTP PUT /api/vendingmachines/33fee4b4-86f9-45a1-b9db-ff20cd2d134d responded 204 in 150.5026 ms
+2026-01-20 11:16:02.414 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.1067 ms
+2026-01-20 11:16:06.489 +03:00 [INF] HTTP GET /api/vendingmachines/a87bfe4c-48b7-4290-abc7-480052dab75a responded 200 in 2.3382 ms
+2026-01-20 11:16:09.517 +03:00 [INF] Vending machine updated: "a87bfe4c-48b7-4290-abc7-480052dab75a"
+2026-01-20 11:16:09.518 +03:00 [INF] HTTP PUT /api/vendingmachines/a87bfe4c-48b7-4290-abc7-480052dab75a responded 204 in 8.2051 ms
+2026-01-20 11:16:09.549 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.1596 ms
+2026-01-20 11:16:16.260 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.3493 ms
+2026-01-20 11:20:53.680 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 141.2744 ms
+2026-01-20 11:22:26.508 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.9731 ms
+2026-01-20 11:22:32.704 +03:00 [INF] Vending machine deleted: "33fee4b4-86f9-45a1-b9db-ff20cd2d134d"
+2026-01-20 11:22:32.706 +03:00 [INF] HTTP DELETE /api/vendingmachines/33fee4b4-86f9-45a1-b9db-ff20cd2d134d responded 204 in 65.7235 ms
+2026-01-20 11:22:32.759 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.1084 ms
+2026-01-20 11:22:34.811 +03:00 [INF] Vending machine deleted: "a87bfe4c-48b7-4290-abc7-480052dab75a"
+2026-01-20 11:22:34.813 +03:00 [INF] HTTP DELETE /api/vendingmachines/a87bfe4c-48b7-4290-abc7-480052dab75a responded 204 in 7.6294 ms
+2026-01-20 11:22:34.869 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.1039 ms
+2026-01-20 11:30:33.809 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 188.3595 ms
+2026-01-20 11:30:39.669 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.9217 ms
+2026-01-20 11:30:41.805 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.6988 ms
+2026-01-20 11:30:43.583 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.1168 ms
+2026-01-20 11:31:33.804 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.0990 ms
+2026-01-20 11:31:55.477 +03:00 [INF] Login attempt for email: s2304992@edu.misis.ru
+2026-01-20 11:31:55.630 +03:00 [INF] User logged in successfully: s2304992@edu.misis.ru
+2026-01-20 11:31:55.631 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 154.3300 ms
+2026-01-20 11:31:55.663 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.9151 ms
+2026-01-20 11:32:09.182 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.8338 ms
+2026-01-20 11:33:46.796 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 8.3959 ms
+2026-01-20 11:33:50.356 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.1031 ms
+2026-01-20 11:34:14.084 +03:00 [INF] HTTP GET /api/vendingmachines/166c8a3f-a211-4d25-b2d4-a5b0b5f067d5 responded 200 in 4.6839 ms
+2026-01-20 11:34:18.085 +03:00 [INF] Vending machine updated: "166c8a3f-a211-4d25-b2d4-a5b0b5f067d5"
+2026-01-20 11:34:18.086 +03:00 [INF] HTTP PUT /api/vendingmachines/166c8a3f-a211-4d25-b2d4-a5b0b5f067d5 responded 204 in 11.1746 ms
+2026-01-20 11:34:18.119 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.4392 ms
+2026-01-20 14:13:19.313 +03:00 [INF] Starting Vending Machine API
+2026-01-20 14:13:39.062 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-20 14:13:39.357 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-20 14:13:41.724 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-20 14:13:41.742 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 2683.1267 ms
+2026-01-20 14:13:42.213 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 180.3832 ms
+2026-01-20 14:14:06.500 +03:00 [INF] HTTP GET /api/companies responded 200 in 214.0515 ms
+2026-01-20 14:14:06.557 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-20 14:14:06.559 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-20 14:14:06.592 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 58.9921 ms
+2026-01-20 14:15:07.165 +03:00 [INF] HTTP GET /api/companies responded 200 in 8.7940 ms
+2026-01-20 14:15:07.193 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.4423 ms
+2026-01-20 14:15:38.488 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.1585 ms
+2026-01-20 14:15:39.002 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.3321 ms
+2026-01-20 14:15:52.317 +03:00 [INF] HTTP GET /api/users responded 404 in 0.5801 ms
+2026-01-20 14:16:20.170 +03:00 [INF] Vending machine created: "5ae208bb-1e73-40fa-b56d-2c0470a01ad9", Name: 123
+2026-01-20 14:16:20.190 +03:00 [INF] HTTP POST /api/vendingmachines responded 201 in 280.6288 ms
+2026-01-20 14:16:21.449 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 8.9091 ms
+2026-01-20 14:16:55.360 +03:00 [INF] HTTP GET /api/companies responded 200 in 4.2629 ms
+2026-01-20 14:16:59.189 +03:00 [INF] HTTP GET /api/companies responded 200 in 3.9567 ms
+2026-01-20 14:17:03.062 +03:00 [INF] HTTP PUT /api/companies/87101e8a-7db0-4fef-9937-a6b234aa351c responded 204 in 94.4750 ms
+2026-01-20 14:17:03.087 +03:00 [INF] HTTP GET /api/companies responded 200 in 6.6462 ms
+2026-01-20 14:17:32.837 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 9.2581 ms
+2026-01-20 14:20:15.097 +03:00 [INF] Registration attempt for email: lotsenre1703@gmail.com
+2026-01-20 14:20:15.579 +03:00 [INF] User registered successfully: lotsenre1703@gmail.com
+2026-01-20 14:20:15.584 +03:00 [INF] HTTP POST /api/auth/register responded 200 in 501.9859 ms
+2026-01-20 14:20:33.724 +03:00 [INF] Login attempt for email: lotsenre1703@gmail.com
+2026-01-20 14:20:33.961 +03:00 [INF] User logged in successfully: lotsenre1703@gmail.com
+2026-01-20 14:20:33.964 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 242.2072 ms
+2026-01-20 14:20:34.104 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 12.7904 ms
+2026-01-20 14:28:00.492 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 182.0010 ms
+2026-01-20 14:28:01.900 +03:00 [INF] HTTP GET /api/users responded 404 in 0.3830 ms
+2026-01-20 15:59:37.385 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 290.2705 ms
+2026-01-20 16:02:36.261 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 11.3044 ms
+2026-01-20 16:04:11.979 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 11.3987 ms

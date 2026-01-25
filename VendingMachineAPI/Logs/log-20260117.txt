@@ -1,0 +1,216 @@
+2026-01-17 20:25:35.833 +03:00 [INF] Starting Vending Machine API
+2026-01-17 20:26:18.303 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-17 20:26:18.545 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:26:20.423 +03:00 [WRN] Invalid password for user: admin@test.com
+2026-01-17 20:26:20.437 +03:00 [INF] HTTP POST /api/auth/login responded 401 in 2135.3614 ms
+2026-01-17 20:26:24.045 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:26:24.427 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:26:24.435 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 393.4275 ms
+2026-01-17 20:26:24.949 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 212.2299 ms
+2026-01-17 20:26:27.151 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-17 20:26:27.153 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-17 20:26:27.172 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 35.8096 ms
+2026-01-17 20:33:47.158 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:33:47.459 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:33:47.461 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 304.5552 ms
+2026-01-17 20:33:47.812 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 16.0261 ms
+2026-01-17 20:33:49.427 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.9637 ms
+2026-01-17 20:34:11.276 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:34:11.538 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:34:11.540 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 264.9524 ms
+2026-01-17 20:34:11.843 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 9.6188 ms
+2026-01-17 20:34:12.921 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3401 ms
+2026-01-17 20:34:13.508 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.8305 ms
+2026-01-17 20:35:27.656 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:35:27.920 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:35:27.922 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 266.4980 ms
+2026-01-17 20:35:28.242 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 10.1330 ms
+2026-01-17 20:35:29.255 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.4489 ms
+2026-01-17 20:35:29.766 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 3.8863 ms
+2026-01-17 20:35:58.203 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:35:58.476 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:35:58.479 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 276.4554 ms
+2026-01-17 20:35:58.768 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 7.5638 ms
+2026-01-17 20:36:00.607 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.2190 ms
+2026-01-17 20:36:39.810 +03:00 [INF] HTTP GET /api/users responded 404 in 0.2871 ms
+2026-01-17 20:37:45.343 +03:00 [INF] HTTP GET /api/users responded 404 in 0.4184 ms
+2026-01-17 20:44:37.480 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:44:37.789 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:44:37.793 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 313.8747 ms
+2026-01-17 20:44:38.051 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 8.6304 ms
+2026-01-17 20:44:39.317 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.8772 ms
+2026-01-17 20:44:43.760 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.8299 ms
+2026-01-17 20:44:44.746 +03:00 [INF] HTTP GET /api/users responded 404 in 0.2018 ms
+2026-01-17 20:48:43.513 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:48:43.779 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:48:43.780 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 268.2041 ms
+2026-01-17 20:48:44.032 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 8.5182 ms
+2026-01-17 20:48:45.299 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.0226 ms
+2026-01-17 20:48:46.878 +03:00 [INF] HTTP GET /api/users responded 404 in 0.3228 ms
+2026-01-17 20:49:37.995 +03:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?' (DbType = DateTime), @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?', @p13='?', @p14='?', @p15='?', @p16='?', @p17='?', @p18='?', @p19='?', @p20='?', @p21='?', @p22='?', @p23='?', @p24='?', @p25='?', @p26='?' (DbType = Decimal), @p27='?' (DbType = DateTime), @p28='?' (DbType = Guid), @p29='?', @p30='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO vending_machines (id, company, coordinates, created_at, critical_threshold_template, engineer, install_date, kit_online_id, last_maintenance_date, location, manager, model, name, notes, notification_template, operator, payment_type, place, rfid_cash_collection, rfid_loading, rfid_service, serial_number, service_priority, status, technician, timezone, total_income, updated_at, user_id, work_mode, working_hours)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30);
+2026-01-17 20:49:38.037 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'VendingMachineAPI.Data.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-01-17 20:49:38.046 +03:00 [ERR] HTTP POST /api/vendingmachines responded 500 in 283.9325 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at VendingMachineAPI.Controllers.VendingMachinesController.Create(CreateVendingMachineRequest request) in C:\Users\Ernesto\Desktop\Chempionat\VendingMachineAPI\Controllers\VendingMachinesController.cs:line 169
+   at lambda_method235(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-01-17 20:49:38.067 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at VendingMachineAPI.Controllers.VendingMachinesController.Create(CreateVendingMachineRequest request) in C:\Users\Ernesto\Desktop\Chempionat\VendingMachineAPI\Controllers\VendingMachinesController.cs:line 169
+   at lambda_method235(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-17 20:51:14.397 +03:00 [INF] HTTP GET /api/users responded 404 in 0.3768 ms
+2026-01-17 20:51:30.123 +03:00 [INF] Vending machine updated: "dc92a945-80cf-4c86-8927-97026c6e82da"
+2026-01-17 20:51:30.126 +03:00 [INF] HTTP PUT /api/vendingmachines/dc92a945-80cf-4c86-8927-97026c6e82da responded 204 in 120.8041 ms
+2026-01-17 20:54:53.438 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-17 20:54:53.740 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-17 20:54:53.742 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 305.4531 ms
+2026-01-17 20:54:54.073 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 10.5512 ms
+2026-01-17 20:54:55.314 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 2.8850 ms
+2026-01-17 20:54:57.983 +03:00 [INF] HTTP GET /api/users responded 404 in 0.3022 ms
+2026-01-17 20:55:04.758 +03:00 [INF] Vending machine updated: "7ed68dd4-ef8b-4124-9084-bc16ee8f10d3"
+2026-01-17 20:55:04.760 +03:00 [INF] HTTP PUT /api/vendingmachines/7ed68dd4-ef8b-4124-9084-bc16ee8f10d3 responded 204 in 23.5619 ms
+2026-01-17 20:55:11.762 +03:00 [INF] HTTP GET /api/users responded 404 in 0.3827 ms
+2026-01-17 20:55:18.363 +03:00 [INF] Modem detached from vending machine: "7ed68dd4-ef8b-4124-9084-bc16ee8f10d3"
+2026-01-17 20:55:18.365 +03:00 [INF] HTTP POST /api/vendingmachines/7ed68dd4-ef8b-4124-9084-bc16ee8f10d3/detach-modem responded 204 in 28.5656 ms
+2026-01-17 20:55:22.540 +03:00 [INF] Vending machine deleted: "7ed68dd4-ef8b-4124-9084-bc16ee8f10d3"
+2026-01-17 20:55:22.542 +03:00 [INF] HTTP DELETE /api/vendingmachines/7ed68dd4-ef8b-4124-9084-bc16ee8f10d3 responded 204 in 55.2686 ms
+2026-01-17 20:55:22.550 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 4.6691 ms
+2026-01-17 20:55:37.103 +03:00 [INF] HTTP GET /api/users responded 404 in 0.4335 ms
+2026-01-17 20:56:20.416 +03:00 [INF] Vending machine created: "a87bfe4c-48b7-4290-abc7-480052dab75a", Name: Хуй
+2026-01-17 20:56:20.445 +03:00 [INF] HTTP POST /api/vendingmachines responded 201 in 52.4294 ms
+2026-01-17 20:56:21.622 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.8653 ms
+2026-01-17 20:56:27.094 +03:00 [INF] HTTP GET /api/users responded 404 in 0.1979 ms
+2026-01-17 20:57:06.078 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.1921 ms
+2026-01-17 20:57:10.627 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.0087 ms

@@ -1,0 +1,413 @@
+<Page x:Class="VendingMachineDesktop.Views.Pages.VendingMachinesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:converters="clr-namespace:VendingMachineDesktop.Utilities.Converters"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      Background="#F5F5F5">
+
+    <Page.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header with Title and Actions -->
+        <materialDesign:Card Grid.Row="0" Padding="20" Margin="0,0,0,20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Title -->
+                <StackPanel Grid.Row="0" Margin="0,0,0,20">
+                    <TextBlock Text="Торговые автоматы"
+                               FontSize="24"
+                               FontWeight="SemiBold"
+                               Foreground="#212121"/>
+                    <TextBlock FontSize="12" Foreground="#757575" Margin="0,4,0,0">
+                        <Run Text="Всего найдено"/>
+                        <Run Text="{Binding TotalRecords, FallbackValue=0}"/>
+                        <Run Text="шт."/>
+                    </TextBlock>
+                </StackPanel>
+
+                <!-- Toolbar -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left: Row Count Selector and Filter -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="Показать"
+                                   VerticalAlignment="Center"
+                                   Foreground="#757575"
+                                   Margin="0,0,10,0"/>
+                        <ComboBox Width="80"
+                                  SelectedItem="{Binding PageSize, Mode=TwoWay}"
+                                  Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                            <sys:Int32>10</sys:Int32>
+                            <sys:Int32>25</sys:Int32>
+                            <sys:Int32>50</sys:Int32>
+                        </ComboBox>
+                        <TextBlock Text="записей"
+                                   VerticalAlignment="Center"
+                                   Foreground="#757575"
+                                   Margin="10,0,30,0"/>
+
+                        <!-- Search Filter -->
+                        <TextBox materialDesign:HintAssist.Hint="Фильтр"
+                                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                                 Width="300"
+                                 Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                    </StackPanel>
+
+                    <!-- Right: Action Buttons and View Toggle -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <!-- Add Button -->
+                        <Button Command="{Binding AddCommand}"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Margin="0,0,10,0"
+                                Height="36">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Plus" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="Добавить"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Export CSV Button -->
+                        <Button Command="{Binding ExportCsvCommand}"
+                                Style="{StaticResource MaterialDesignOutlinedButton}"
+                                Margin="0,0,15,0"
+                                Height="36">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="FileExport" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="Экспорт"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- View Mode Toggle Icons -->
+                        <ToggleButton IsChecked="{Binding IsTileView}"
+                                      Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                                      ToolTip="Плитка"
+                                      Width="36"
+                                      Height="36"
+                                      Margin="0,0,5,0">
+                            <materialDesign:PackIcon Kind="ViewModule" Width="20" Height="20"/>
+                        </ToggleButton>
+                        <ToggleButton IsChecked="{Binding IsTableView}"
+                                      Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                                      ToolTip="Таблица"
+                                      Width="36"
+                                      Height="36">
+                            <materialDesign:PackIcon Kind="Table" Width="20" Height="20"/>
+                        </ToggleButton>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
+
+        <!-- Table View (DataGrid) -->
+        <materialDesign:Card Grid.Row="1" Margin="0,0,0,20"
+                             Visibility="{Binding IsTableView, Converter={StaticResource BoolToVisibilityConverter}}">
+            <DataGrid ItemsSource="{Binding VendingMachines}"
+                      SelectedItem="{Binding SelectedVendingMachine}"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      SelectionMode="Single"
+                      IsReadOnly="True"
+                      RowHeight="48"
+                      HeadersVisibility="All"
+                      GridLinesVisibility="Horizontal"
+                      AlternationCount="2">
+
+                <!-- Alternating Row Colors -->
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="AlternationIndex" Value="1">
+                                <Setter Property="Background" Value="#FAFAFA"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#E3F2FD"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F5F5F5"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.Columns>
+                    <!-- ID -->
+                    <DataGridTextColumn Header="ID"
+                                        Binding="{Binding SerialNumber}"
+                                        Width="100"
+                                        FontSize="13"/>
+
+                    <!-- Name with Icon -->
+                    <DataGridTemplateColumn Header="Название" Width="180">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <materialDesign:PackIcon Kind="Coffee"
+                                                             Width="20" Height="20"
+                                                             Foreground="#2196F3"
+                                                             VerticalAlignment="Center"
+                                                             Margin="0,0,8,0"/>
+                                    <TextBlock Text="{Binding Name}"
+                                               FontSize="13"
+                                               FontWeight="SemiBold"
+                                               VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Model -->
+                    <DataGridTextColumn Header="Модель"
+                                        Binding="{Binding Model}"
+                                        Width="140"
+                                        FontSize="13"/>
+
+                    <!-- Company -->
+                    <DataGridTextColumn Header="Компания (франчайзи)"
+                                        Binding="{Binding Company}"
+                                        Width="160"
+                                        FontSize="13"/>
+
+                    <!-- Modem -->
+                    <DataGridTextColumn Header="Модем"
+                                        Binding="{Binding KitOnlineId}"
+                                        Width="120"
+                                        FontSize="13"/>
+
+                    <!-- Address / Location -->
+                    <DataGridTemplateColumn Header="Адрес / Место" Width="*" MinWidth="180">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Location}"
+                                               FontSize="13"
+                                               TextTrimming="CharacterEllipsis"/>
+                                    <TextBlock Text="{Binding Place}"
+                                               FontSize="11"
+                                               Foreground="#757575"
+                                               TextTrimming="CharacterEllipsis"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Operating Since -->
+                    <DataGridTextColumn Header="В работе с"
+                                        Binding="{Binding InstallDate, StringFormat={}{0:dd.MM.yyyy}}"
+                                        Width="120"
+                                        FontSize="13"/>
+
+                    <!-- Actions Column -->
+                    <DataGridTemplateColumn Header="Действия" Width="140">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <!-- Edit Button -->
+                                    <Button Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Редактировать"
+                                            Width="32"
+                                            Height="32"
+                                            Margin="4,0">
+                                        <materialDesign:PackIcon Kind="Pencil" Width="18" Height="18" Foreground="#2196F3"/>
+                                    </Button>
+
+                                    <!-- Delete Button -->
+                                    <Button Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Удалить"
+                                            Width="32"
+                                            Height="32"
+                                            Margin="4,0">
+                                        <materialDesign:PackIcon Kind="Delete" Width="18" Height="18" Foreground="#F44336"/>
+                                    </Button>
+
+                                    <!-- Detach Modem Button -->
+                                    <Button Command="{Binding DataContext.DetachModemCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Отвязать модем"
+                                            Width="32"
+                                            Height="32"
+                                            Margin="4,0">
+                                        <materialDesign:PackIcon Kind="LinkVariantOff" Width="18" Height="18" Foreground="#FF9800"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </materialDesign:Card>
+
+        <!-- Tile View -->
+        <ScrollViewer Grid.Row="1" Margin="0,0,0,20"
+                      VerticalScrollBarVisibility="Auto"
+                      Visibility="{Binding IsTileView, Converter={StaticResource BoolToVisibilityConverter}}">
+            <ItemsControl ItemsSource="{Binding VendingMachines}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card Width="280" Margin="0,0,16,16" Padding="16">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- Header with icon and name -->
+                                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
+                                    <Border Background="#E3F2FD" CornerRadius="8" Padding="8" Margin="0,0,12,0">
+                                        <materialDesign:PackIcon Kind="Coffee" Width="24" Height="24" Foreground="#2196F3"/>
+                                    </Border>
+                                    <StackPanel VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="SemiBold"
+                                                   TextTrimming="CharacterEllipsis" MaxWidth="180"/>
+                                        <TextBlock Text="{Binding SerialNumber}" FontSize="11" Foreground="#757575"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!-- Model and Manufacturer -->
+                                <StackPanel Grid.Row="1" Margin="0,0,0,8">
+                                    <TextBlock FontSize="12" Foreground="#757575">
+                                        <Run Text="Модель:"/>
+                                        <Run Text="{Binding Model, Mode=OneWay}" Foreground="#212121"/>
+                                    </TextBlock>
+                                    <TextBlock FontSize="12" Foreground="#757575">
+                                        <Run Text="Компания:"/>
+                                        <Run Text="{Binding Company, Mode=OneWay}" Foreground="#212121"/>
+                                    </TextBlock>
+                                </StackPanel>
+
+                                <!-- Location -->
+                                <StackPanel Grid.Row="2" Margin="0,0,0,8">
+                                    <TextBlock Text="{Binding Location}" FontSize="12" TextTrimming="CharacterEllipsis"/>
+                                    <TextBlock Text="{Binding Place}" FontSize="11" Foreground="#757575" TextTrimming="CharacterEllipsis"/>
+                                </StackPanel>
+
+                                <!-- Date -->
+                                <TextBlock Grid.Row="3" FontSize="11" Foreground="#757575" Margin="0,0,0,12">
+                                    <Run Text="В работе с:"/>
+                                    <Run Text="{Binding InstallDate, Mode=OneWay, StringFormat={}{0:dd.MM.yyyy}}"/>
+                                </TextBlock>
+
+                                <!-- Actions -->
+                                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Редактировать"
+                                            Width="32" Height="32">
+                                        <materialDesign:PackIcon Kind="Pencil" Width="18" Height="18" Foreground="#2196F3"/>
+                                    </Button>
+                                    <Button Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Удалить"
+                                            Width="32" Height="32">
+                                        <materialDesign:PackIcon Kind="Delete" Width="18" Height="18" Foreground="#F44336"/>
+                                    </Button>
+                                    <Button Command="{Binding DataContext.DetachModemCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Отвязать модем"
+                                            Width="32" Height="32">
+                                        <materialDesign:PackIcon Kind="LinkVariantOff" Width="18" Height="18" Foreground="#FF9800"/>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!-- Pagination -->
+        <materialDesign:Card Grid.Row="2" Padding="16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Records Count Info -->
+                <TextBlock Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Foreground="#757575"
+                           FontSize="13">
+                    <Run Text="Записи с"/>
+                    <Run Text="{Binding StartRecord, Mode=OneWay, FallbackValue=1}" FontWeight="SemiBold"/>
+                    <Run Text="до"/>
+                    <Run Text="{Binding EndRecord, Mode=OneWay, FallbackValue=9}" FontWeight="SemiBold"/>
+                    <Run Text="из"/>
+                    <Run Text="{Binding TotalRecords, Mode=OneWay, FallbackValue=9}" FontWeight="SemiBold"/>
+                    <Run Text="записей"/>
+                </TextBlock>
+
+                <!-- Page navigation -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="&lt;"
+                            Command="{Binding PreviousPageCommand}"
+                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                            Width="40"
+                            Height="36"
+                            Margin="0,0,5,0"/>
+
+                    <ItemsControl ItemsSource="{Binding PageNumbers}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding}"
+                                        Command="{Binding DataContext.GoToPageCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                        CommandParameter="{Binding}"
+                                        Style="{StaticResource MaterialDesignOutlinedButton}"
+                                        Width="40"
+                                        Height="36"
+                                        Margin="0,0,5,0"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <Button Content="&gt;"
+                            Command="{Binding NextPageCommand}"
+                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                            Width="40"
+                            Height="36"/>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Page>

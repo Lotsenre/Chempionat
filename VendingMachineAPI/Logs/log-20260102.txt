@@ -1,0 +1,14 @@
+2026-01-02 21:29:27.793 +03:00 [INF] Starting Vending Machine API
+2026-01-02 21:35:55.450 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-02 21:35:56.694 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-02 21:36:00.334 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-02 21:36:00.360 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 4922.7533 ms
+2026-01-02 21:36:08.689 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-02 21:36:09.222 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-02 21:36:09.226 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 623.8309 ms
+2026-01-02 21:36:14.676 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-02 21:36:15.246 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-02 21:36:15.249 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 586.3949 ms
+2026-01-02 21:36:16.581 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-02 21:36:17.037 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-02 21:36:17.040 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 461.0142 ms

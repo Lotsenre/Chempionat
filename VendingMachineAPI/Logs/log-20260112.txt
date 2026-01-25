@@ -1,0 +1,21 @@
+2026-01-12 09:27:15.174 +03:00 [INF] Starting Vending Machine API
+2026-01-12 09:27:29.374 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-01-12 09:27:29.804 +03:00 [INF] Login attempt for email: admin@test.com
+2026-01-12 09:27:33.037 +03:00 [INF] User logged in successfully: admin@test.com
+2026-01-12 09:27:33.062 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 3693.1165 ms
+2026-01-12 09:27:33.732 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 244.1360 ms
+2026-01-12 09:27:47.262 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 110.8681 ms
+2026-01-12 09:27:51.765 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 10.5756 ms
+2026-01-12 09:27:52.416 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-12 09:27:52.419 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-01-12 09:27:52.449 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 55.7565 ms
+2026-01-12 09:27:54.864 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 7.7672 ms
+2026-01-12 09:27:56.111 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.6592 ms
+2026-01-12 09:27:58.326 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.6479 ms
+2026-01-12 09:27:58.827 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.9671 ms
+2026-01-12 09:28:01.383 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 13.1979 ms
+2026-01-12 09:28:05.741 +03:00 [INF] HTTP GET /api/dashboard responded 200 in 9.7340 ms
+2026-01-12 09:28:06.020 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.0405 ms
+2026-01-12 09:28:08.633 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 6.0358 ms
+2026-01-12 09:28:09.339 +03:00 [INF] HTTP GET /api/companies responded 404 in 0.3579 ms
+2026-01-12 09:28:11.242 +03:00 [INF] HTTP GET /api/vendingmachines responded 200 in 5.1217 ms

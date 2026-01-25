@@ -1,0 +1,63 @@
+<Page x:Class="VendingMachineDesktop.Views.Pages.UnderDevelopmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Background="#F5F5F5">
+
+    <Grid>
+        <materialDesign:Card Padding="40"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            MaxWidth="500">
+            <StackPanel HorizontalAlignment="Center">
+                <!-- Icon -->
+                <Border Width="100" Height="100"
+                        Background="#E3F2FD"
+                        CornerRadius="50"
+                        Margin="0,0,0,24">
+                    <materialDesign:PackIcon Kind="HardHat"
+                                            Width="50" Height="50"
+                                            Foreground="#1976D2"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
+                </Border>
+
+                <!-- Title -->
+                <TextBlock x:Name="PageTitle"
+                           Text="Раздел в разработке"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Foreground="#212121"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,12"/>
+
+                <!-- Description -->
+                <TextBlock Text="Данный функционал находится в процессе разработки и будет доступен в ближайшем обновлении системы."
+                           FontSize="14"
+                           Foreground="#757575"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           Margin="0,0,0,24"/>
+
+                <!-- Progress indicator -->
+                <StackPanel Orientation="Horizontal"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,16">
+                    <materialDesign:PackIcon Kind="ClockOutline"
+                                            Width="18" Height="18"
+                                            Foreground="#FF9800"
+                                            Margin="0,0,8,0"/>
+                    <TextBlock Text="Ожидаемый срок: скоро"
+                               FontSize="13"
+                               Foreground="#FF9800"/>
+                </StackPanel>
+
+                <!-- Back suggestion -->
+                <TextBlock Text="Пожалуйста, воспользуйтесь другими разделами меню."
+                           FontSize="12"
+                           Foreground="#9E9E9E"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Page>
