@@ -22,6 +22,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<MachineStatus> MachineStatuses { get; set; }
     public DbSet<Contract> Contracts { get; set; }
     public DbSet<AvailableMachine> AvailableMachines { get; set; }
+    public DbSet<Modem> Modems { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -143,6 +144,12 @@ public class ApplicationDbContext : DbContext
                 .WithMany(vm => vm.AvailableMachines)
                 .HasForeignKey(e => e.VendingMachineId)
                 .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // Modem entity configuration
+        modelBuilder.Entity<Modem>(entity =>
+        {
+            entity.HasIndex(e => e.ModemNumber).IsUnique();
         });
     }
 }

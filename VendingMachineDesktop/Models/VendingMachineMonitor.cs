@@ -6,6 +6,7 @@ public class VendingMachineMonitor
     public string Code { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
+    public string Company { get; set; } = string.Empty;
 
     // Выбор строки
     public bool IsSelected { get; set; }

@@ -262,7 +262,8 @@
                                    HorizontalContentAlignment="Left"
                                    Padding="19,12"
                                    Cursor="Hand"
-                                   ToolTip="Детальные отчеты">
+                                   ToolTip="Детальные отчеты"
+                                   Visibility="{Binding CanAccessReports, Converter={StaticResource BoolToVisibilityConverter}}">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background" Value="Transparent"/>
@@ -295,7 +296,8 @@
                                    HorizontalContentAlignment="Left"
                                    Padding="19,12"
                                    Cursor="Hand"
-                                   ToolTip="Учет ТМЦ">
+                                   ToolTip="Учет ТМЦ"
+                                   Visibility="{Binding CanAccessInventory, Converter={StaticResource BoolToVisibilityConverter}}">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background" Value="Transparent"/>
@@ -320,7 +322,7 @@
                             </Button>
 
                             <!-- Администрирование - при свернутом меню показываем только иконку -->
-                            <StackPanel>
+                            <StackPanel Visibility="{Binding CanAccessAdmin, Converter={StaticResource BoolToVisibilityConverter}}">
                                 <!-- Кнопка-заголовок Администрирование -->
                                 <Button x:Name="AdminExpandButton"
                                        Click="AdminExpandButton_Click"
@@ -422,7 +424,8 @@
                                            BorderThickness="0"
                                            HorizontalContentAlignment="Left"
                                            Cursor="Hand"
-                                           ToolTip="Компании">
+                                           ToolTip="Компании"
+                                           Visibility="{Binding CanAccessCompanies, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <Button.Style>
                                             <Style TargetType="Button">
                                                 <Setter Property="Background" Value="Transparent"/>
@@ -466,7 +469,8 @@
                                            BorderThickness="0"
                                            HorizontalContentAlignment="Left"
                                            Cursor="Hand"
-                                           ToolTip="Пользователи">
+                                           ToolTip="Пользователи"
+                                           Visibility="{Binding CanAccessUsers, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <Button.Style>
                                             <Style TargetType="Button">
                                                 <Setter Property="Background" Value="Transparent"/>
@@ -547,14 +551,15 @@
                                         </StackPanel>
                                     </Button>
 
-                                    <!-- Дополнительные -->
+                                    <!-- Контракты -->
                                     <Button Click="MenuButton_Click"
-                                           Tag="Additional"
+                                           Tag="Contracts"
                                            Background="Transparent"
                                            BorderThickness="0"
                                            HorizontalContentAlignment="Left"
                                            Cursor="Hand"
-                                           ToolTip="Дополнительные">
+                                           ToolTip="Контракты"
+                                           Visibility="{Binding CanAccessContracts, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <Button.Style>
                                             <Style TargetType="Button">
                                                 <Setter Property="Background" Value="Transparent"/>
@@ -570,7 +575,7 @@
                                             </Style>
                                         </Button.Style>
                                         <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="DotsHorizontal"
+                                            <materialDesign:PackIcon Kind="FileDocumentOutline"
                                                                     Width="18" Height="18"
                                                                     Foreground="White">
                                                 <materialDesign:PackIcon.Style>
@@ -584,7 +589,7 @@
                                                     </Style>
                                                 </materialDesign:PackIcon.Style>
                                             </materialDesign:PackIcon>
-                                            <TextBlock Text="Дополнительные"
+                                            <TextBlock Text="Контракты"
                                                       FontSize="13"
                                                       Foreground="White"
                                                       Visibility="{Binding IsPaneOpen, Converter={StaticResource BoolToVisibilityConverter}}"/>

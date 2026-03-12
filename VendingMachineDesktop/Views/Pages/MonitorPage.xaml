@@ -3,24 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:converters="clr-namespace:VendingMachineDesktop.Utilities.Converters"
-      Background="White">
+      Background="#F5F5F5">
 
     <Page.Resources>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         <converters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
         <converters:BoolToBackgroundConverter x:Key="BoolToBackgroundConverter"/>
 
-        <!-- Стиль для ComboBox -->
-        <Style x:Key="WhiteComboBoxStyle" TargetType="ComboBox">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="#CCCCCC"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="8,4"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="12"/>
-        </Style>
-
-        <!-- Стиль кнопки-фильтра (круглая иконка) -->
+        <!-- ToggleButton для фильтров-иконок -->
         <Style x:Key="FilterIconButtonStyle" TargetType="ToggleButton">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -35,8 +25,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4"
-                                Padding="2">
+                                CornerRadius="4" Padding="2">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -45,7 +34,7 @@
                                 <Setter TargetName="border" Property="Background" Value="#E3F2FD"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#F5F5F5"/>
+                                <Setter TargetName="border" Property="Background" Value="#EEEEEE"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -53,7 +42,7 @@
             </Setter>
         </Style>
 
-        <!-- Стиль для текстовой кнопки-фильтра -->
+        <!-- ToggleButton для текстовых фильтров -->
         <Style x:Key="FilterTextButtonStyle" TargetType="ToggleButton">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="1"/>
@@ -68,8 +57,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="3"
-                                Padding="{TemplateBinding Padding}">
+                                CornerRadius="3" Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -85,667 +73,681 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-        <!-- Стиль кнопки Применить -->
-        <Style x:Key="ApplyButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#17A2B8"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Padding" Value="20,8"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                CornerRadius="4"
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <!-- Стиль кнопки Очистить -->
-        <Style x:Key="ClearButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#E0E0E0"/>
-            <Setter Property="Foreground" Value="#333"/>
-            <Setter Property="Padding" Value="20,8"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                CornerRadius="4"
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <!-- Стиль для прогресс-бара загрузки -->
-        <Style x:Key="LoadProgressBarStyle" TargetType="ProgressBar">
-            <Setter Property="Height" Value="8"/>
-            <Setter Property="Margin" Value="0,1"/>
-            <Setter Property="Background" Value="#E0E0E0"/>
-        </Style>
     </Page.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Header -->
-        <Border Grid.Row="0" Background="#4A90A4" Padding="15,12">
+        <!-- ═══ HEADER ═══ -->
+        <materialDesign:Card Grid.Row="0" Margin="16,16,16,0" Padding="16">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0">
-                    <TextBlock Text="Монитор торговых автоматов"
-                               Foreground="White"
-                               FontSize="18"
-                               FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding LastUpdateTime}"
-                               Foreground="#B0E0E6"
-                               FontSize="11"
-                               Margin="0,2,0,0"/>
-                </StackPanel>
-                <!-- Иконки справа -->
-                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="8" ToolTip="Таблица">
-                        <TextBlock Text="&#xE8F1;" FontFamily="Segoe MDL2 Assets" FontSize="18" Foreground="White"/>
-                    </Button>
-                    <Button Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="8" ToolTip="Список">
-                        <TextBlock Text="&#xE8FD;" FontFamily="Segoe MDL2 Assets" FontSize="18" Foreground="White"/>
-                    </Button>
-                </StackPanel>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Заголовок + режим отображения + компания + сортировка -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Заголовок -->
+                    <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                        <TextBlock Text="Монитор торговых автоматов" FontSize="20" FontWeight="SemiBold" Foreground="#212121"/>
+                        <TextBlock Text="{Binding LastUpdateTime}" FontSize="11" Foreground="#757575" Margin="0,2,0,0"/>
+                    </StackPanel>
+
+                    <!-- Компания -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
+                        <materialDesign:PackIcon Kind="Domain" VerticalAlignment="Center" Foreground="#757575" Margin="0,0,6,0"/>
+                        <ComboBox Width="250"
+                                  Style="{StaticResource WhiteOutlinedComboBox}"
+                                  materialDesign:HintAssist.Hint="Компания"
+                                  ItemsSource="{Binding Companies}"
+                                  SelectedItem="{Binding SelectedCompany}"
+                                  materialDesign:HintAssist.FloatingScale="0.75"
+                                  IsEditable="False">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!-- Сортировка -->
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
+                        <materialDesign:PackIcon Kind="SortVariant" VerticalAlignment="Center" Foreground="#757575" Margin="0,0,6,0"/>
+                        <ComboBox Width="230"
+                                  Style="{StaticResource WhiteOutlinedComboBox}"
+                                  materialDesign:HintAssist.Hint="Сортировка"
+                                  ItemsSource="{Binding SortOptions}"
+                                  SelectedItem="{Binding SelectedSortOption}"
+                                  DisplayMemberPath="Name"
+                                  materialDesign:HintAssist.FloatingScale="0.75"
+                                  IsEditable="False"/>
+                    </StackPanel>
+
+                    <!-- Переключение вида: таблица / плитки -->
+                    <StackPanel Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Command="{Binding SetTableViewCommand}"
+                                Style="{StaticResource MaterialDesignIconButton}"
+                                ToolTip="Таблица" Width="36" Height="36" Margin="0,0,4,0">
+                            <materialDesign:PackIcon Kind="ViewList" Width="20" Height="20">
+                                <materialDesign:PackIcon.Style>
+                                    <Style TargetType="materialDesign:PackIcon">
+                                        <Setter Property="Foreground" Value="#9E9E9E"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsTableView}" Value="True">
+                                                <Setter Property="Foreground" Value="#1976D2"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </materialDesign:PackIcon.Style>
+                            </materialDesign:PackIcon>
+                        </Button>
+                        <Button Command="{Binding SetTileViewCommand}"
+                                Style="{StaticResource MaterialDesignIconButton}"
+                                ToolTip="Плитки" Width="36" Height="36">
+                            <materialDesign:PackIcon Kind="ViewModule" Width="20" Height="20">
+                                <materialDesign:PackIcon.Style>
+                                    <Style TargetType="materialDesign:PackIcon">
+                                        <Setter Property="Foreground" Value="#9E9E9E"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsTileView}" Value="True">
+                                                <Setter Property="Foreground" Value="#1976D2"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </materialDesign:PackIcon.Style>
+                            </materialDesign:PackIcon>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Фильтры (второй ряд) -->
+                <Grid Grid.Row="1" Margin="0,14,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Состояние -->
+                    <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                        <TextBlock Text="Состояние" FontSize="11" Foreground="#757575" Margin="0,0,0,6"/>
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterStatusGreen}" Margin="0,0,4,0" ToolTip="Работает">
+                                <Ellipse Width="20" Height="20" Fill="#4CAF50"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterStatusRed}" Margin="0,0,4,0" ToolTip="Не работает">
+                                <Ellipse Width="20" Height="20" Fill="#F44336"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterStatusBlue}" ToolTip="На обслуживании">
+                                <Ellipse Width="20" Height="20" Fill="#2196F3"/>
+                            </ToggleButton>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Подключение -->
+                    <StackPanel Grid.Column="1" Margin="0,0,20,0">
+                        <TextBlock Text="Подключение" FontSize="11" Foreground="#757575" Margin="0,0,0,6"/>
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton Style="{StaticResource FilterTextButtonStyle}"
+                                          IsChecked="{Binding FilterConnectionMdb}" Margin="0,0,4,0">
+                                <TextBlock Text="MDB" FontWeight="SemiBold" FontSize="10"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterTextButtonStyle}"
+                                          IsChecked="{Binding FilterConnectionExePh}" Margin="0,0,4,0">
+                                <TextBlock Text="EXE PH" FontWeight="SemiBold" FontSize="10"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterTextButtonStyle}"
+                                          IsChecked="{Binding FilterConnectionExeSt}">
+                                <TextBlock Text="EXE ST" FontWeight="SemiBold" FontSize="10"/>
+                            </ToggleButton>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Доп. статусы -->
+                    <StackPanel Grid.Column="2" Margin="0,0,20,0">
+                        <TextBlock Text="Доп. статусы" FontSize="11" Foreground="#757575" Margin="0,0,0,6"/>
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterFewGoods}" Margin="0,0,2,0" ToolTip="Мало товара (критично)">
+                                <materialDesign:PackIcon Kind="PackageVariantRemove" Width="18" Height="18" Foreground="#F44336"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterFewGoodsYellow}" Margin="0,0,2,0" ToolTip="Мало товара">
+                                <materialDesign:PackIcon Kind="PackageVariantRemove" Width="18" Height="18" Foreground="#FF9800"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterFewChange}" Margin="0,0,2,0" ToolTip="Мало сдачи (критично)">
+                                <materialDesign:PackIcon Kind="CashRemove" Width="18" Height="18" Foreground="#F44336"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterFewChangeYellow}" Margin="0,0,2,0" ToolTip="Мало сдачи">
+                                <materialDesign:PackIcon Kind="CashRemove" Width="18" Height="18" Foreground="#FF9800"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterNoEncashment}" Margin="0,0,2,0" ToolTip="Нужна инкассация">
+                                <materialDesign:PackIcon Kind="SafeSquareOutline" Width="18" Height="18" Foreground="#F44336"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterNoService}" Margin="0,0,2,0" ToolTip="Нужно обслуживание">
+                                <materialDesign:PackIcon Kind="Wrench" Width="18" Height="18" Foreground="#F44336"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterNoFillup}" Margin="0,0,2,0" ToolTip="Нужна загрузка">
+                                <materialDesign:PackIcon Kind="TrayArrowDown" Width="18" Height="18" Foreground="#F44336"/>
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
+                                          IsChecked="{Binding FilterHardwareProblems}" ToolTip="Проблемы с оборудованием">
+                                <materialDesign:PackIcon Kind="AlertCircle" Width="18" Height="18" Foreground="#F44336"/>
+                            </ToggleButton>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Применить / Очистить -->
+                    <StackPanel Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Bottom">
+                        <Button Content="Применить" Command="{Binding ApplyFilterCommand}"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Height="32" Margin="0,0,8,0"/>
+                        <Button Content="Очистить" Command="{Binding ClearFilterCommand}"
+                                Style="{StaticResource MaterialDesignOutlinedButton}"
+                                Height="32"/>
+                    </StackPanel>
+                </Grid>
             </Grid>
-        </Border>
+        </materialDesign:Card>
 
-        <!-- Filter Row -->
-        <Border Grid.Row="1" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1" Padding="15,12">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <!-- Общее состояние -->
-                <StackPanel Grid.Column="0" Margin="0,0,25,0">
-                    <TextBlock Text="Общее состояние" FontSize="11" Foreground="#666" Margin="0,0,0,6"/>
-                    <StackPanel Orientation="Horizontal">
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterStatusGreen}"
-                                      Margin="0,0,4,0" ToolTip="Работает">
-                            <Ellipse Width="20" Height="20" Fill="#4CAF50"/>
-                        </ToggleButton>
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterStatusRed}"
-                                      Margin="0,0,4,0" ToolTip="Не работает">
-                            <Ellipse Width="20" Height="20" Fill="#F44336"/>
-                        </ToggleButton>
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterStatusBlue}"
-                                      ToolTip="На обслуживании">
-                            <Ellipse Width="20" Height="20" Fill="#2196F3"/>
-                        </ToggleButton>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Подключение -->
-                <StackPanel Grid.Column="1" Margin="0,0,25,0">
-                    <TextBlock Text="Подключение" FontSize="11" Foreground="#666" Margin="0,0,0,6"/>
-                    <StackPanel Orientation="Horizontal">
-                        <ToggleButton Style="{StaticResource FilterTextButtonStyle}"
-                                      IsChecked="{Binding FilterConnectionMdb}"
-                                      Margin="0,0,4,0" ToolTip="MDB">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="&#xE774;" FontFamily="Segoe MDL2 Assets" FontSize="14" VerticalAlignment="Center" Margin="0,0,4,0"/>
-                            </StackPanel>
-                        </ToggleButton>
-                        <ToggleButton Style="{StaticResource FilterTextButtonStyle}"
-                                      IsChecked="{Binding FilterConnectionMdb}"
-                                      Margin="0,0,4,0" ToolTip="MDB">
-                            <TextBlock Text="MDB" FontWeight="SemiBold"/>
-                        </ToggleButton>
-                        <ToggleButton Style="{StaticResource FilterTextButtonStyle}"
-                                      IsChecked="{Binding FilterConnectionExePh}"
-                                      Margin="0,0,4,0" ToolTip="EXE PH">
-                            <TextBlock Text="EXE&#x000A;PH" TextAlignment="Center" FontWeight="SemiBold" FontSize="9"/>
-                        </ToggleButton>
-                        <ToggleButton Style="{StaticResource FilterTextButtonStyle}"
-                                      IsChecked="{Binding FilterConnectionExeSt}"
-                                      ToolTip="EXE ST">
-                            <TextBlock Text="EXE&#x000A;ST" TextAlignment="Center" FontWeight="SemiBold" FontSize="9"/>
-                        </ToggleButton>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Дополнительные статусы -->
-                <StackPanel Grid.Column="2" Margin="0,0,25,0">
-                    <TextBlock Text="Дополнительные статусы" FontSize="11" Foreground="#666" Margin="0,0,0,6"/>
-                    <StackPanel Orientation="Horizontal">
-                        <!-- Мало товара красный -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterFewGoods}"
-                                      Margin="0,0,2,0" ToolTip="Мало товара (критично)">
-                            <Image Source="/Assets/Icons/Statuses/FewGoods.png" Width="22" Height="22"/>
-                        </ToggleButton>
-                        <!-- Мало товара желтый -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterFewGoodsYellow}"
-                                      Margin="0,0,2,0" ToolTip="Мало товара (предупреждение)">
-                            <Image Source="/Assets/Icons/Statuses/FewGoods.png" Width="22" Height="22" Opacity="0.6"/>
-                        </ToggleButton>
-                        <!-- Мало сдачи красный -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterFewChange}"
-                                      Margin="0,0,2,0" ToolTip="Мало сдачи (критично)">
-                            <Image Source="/Assets/Icons/Statuses/FewChange.png" Width="22" Height="22"/>
-                        </ToggleButton>
-                        <!-- Мало сдачи желтый -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterFewChangeYellow}"
-                                      Margin="0,0,2,0" ToolTip="Мало сдачи (предупреждение)">
-                            <Image Source="/Assets/Icons/Statuses/FewChange.png" Width="22" Height="22" Opacity="0.6"/>
-                        </ToggleButton>
-                        <!-- Инкассация красный -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterNoEncashment}"
-                                      Margin="0,0,2,0" ToolTip="Нужна инкассация (критично)">
-                            <Image Source="/Assets/Icons/Statuses/NoEncashment.png" Width="22" Height="22"/>
-                        </ToggleButton>
-                        <!-- Инкассация желтый -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterNoEncashmentYellow}"
-                                      Margin="0,0,2,0" ToolTip="Нужна инкассация (предупреждение)">
-                            <Image Source="/Assets/Icons/Statuses/NoEncashment.png" Width="22" Height="22" Opacity="0.6"/>
-                        </ToggleButton>
-                        <!-- Обслуживание красный -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterNoService}"
-                                      Margin="0,0,2,0" ToolTip="Нужно обслуживание (критично)">
-                            <Image Source="/Assets/Icons/Statuses/NoService.png" Width="22" Height="22"/>
-                        </ToggleButton>
-                        <!-- Обслуживание желтый -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterNoServiceYellow}"
-                                      Margin="0,0,2,0" ToolTip="Нужно обслуживание (предупреждение)">
-                            <Image Source="/Assets/Icons/Statuses/NoService.png" Width="22" Height="22" Opacity="0.6"/>
-                        </ToggleButton>
-                        <!-- Загрузка красный -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterNoFillup}"
-                                      Margin="0,0,2,0" ToolTip="Нужна загрузка (критично)">
-                            <Image Source="/Assets/Icons/Statuses/NoFillup.png" Width="22" Height="22"/>
-                        </ToggleButton>
-                        <!-- Загрузка желтый -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterNoFillupYellow}"
-                                      Margin="0,0,2,0" ToolTip="Нужна загрузка (предупреждение)">
-                            <Image Source="/Assets/Icons/Statuses/NoFillup.png" Width="22" Height="22" Opacity="0.6"/>
-                        </ToggleButton>
-                        <!-- Проблемы с оборудованием -->
-                        <ToggleButton Style="{StaticResource FilterIconButtonStyle}"
-                                      IsChecked="{Binding FilterHardwareProblems}"
-                                      ToolTip="Проблемы с оборудованием">
-                            <Image Source="/Assets/Icons/Statuses/HardwareProblems.png" Width="22" Height="22"/>
-                        </ToggleButton>
-                    </StackPanel>
-                </StackPanel>
-
-                <!-- Сортировка -->
-                <StackPanel Grid.Column="4">
-                    <TextBlock Text="Сортировка" FontSize="11" Foreground="#666" Margin="0,0,0,6"/>
-                    <ComboBox Width="200"
-                              Style="{StaticResource WhiteComboBoxStyle}"
-                              ItemsSource="{Binding SortOptions}"
-                              SelectedItem="{Binding SelectedSortOption}"
-                              DisplayMemberPath="Name"/>
-                </StackPanel>
-            </Grid>
-        </Border>
-
-        <!-- Buttons and Company Row -->
-        <Border Grid.Row="2" Background="#F8F9FA" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1" Padding="15,10">
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Применить"
-                        Command="{Binding ApplyFilterCommand}"
-                        Style="{StaticResource ApplyButtonStyle}"
-                        Margin="0,0,10,0"/>
-                <Button Content="Очистить"
-                        Command="{Binding ClearFilterCommand}"
-                        Style="{StaticResource ClearButtonStyle}"/>
+        <!-- ═══ НЕТ РЕЗУЛЬТАТОВ ═══ -->
+        <Border Grid.Row="2" Background="#FFF3CD" Padding="20" Margin="16"
+                Visibility="{Binding ShowNoResultsMessage, Converter={StaticResource BoolToVisibilityConverter}}"
+                CornerRadius="4">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <materialDesign:PackIcon Kind="AlertCircleOutline" Width="40" Height="40" Foreground="#856404" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                <TextBlock Text="Нет торговых автоматов, соответствующих заданному фильтру."
+                           FontSize="14" Foreground="#856404" HorizontalAlignment="Center"/>
             </StackPanel>
         </Border>
 
-        <!-- Company Selector -->
-        <Border Grid.Row="3" Background="#F8F9FA" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1" Padding="15,10">
-            <ComboBox Width="350"
-                      HorizontalAlignment="Left"
-                      Style="{StaticResource WhiteComboBoxStyle}"
-                      ItemsSource="{Binding Companies}"
-                      SelectedItem="{Binding SelectedCompany}">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock>
-                            <Run Text="{Binding Code, Mode=OneWay}"/>
-                            <Run Text=" - '"/>
-                            <Run Text="{Binding Name, Mode=OneWay}"/>
-                            <Run Text="'"/>
-                        </TextBlock>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-        </Border>
+        <!-- ═══ ТАБЛИЦА ═══ -->
+        <materialDesign:Card Grid.Row="2" Margin="16,12,16,0"
+                             Visibility="{Binding IsTableView, Converter={StaticResource BoolToVisibilityConverter}}">
+            <DataGrid ItemsSource="{Binding MonitorData}"
+                      AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                      IsReadOnly="True" SelectionMode="Single"
+                      GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#EEEEEE"
+                      RowHeight="80" HeadersVisibility="Column" Background="White" BorderThickness="0"
+                      VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
 
-        <!-- No Results Message -->
-        <Border Grid.Row="4"
-                Background="#FFF3CD"
-                Padding="20"
-                Visibility="{Binding ShowNoResultsMessage, Converter={StaticResource BoolToVisibilityConverter}}">
-            <TextBlock Text="Нет активных торговых автоматов, соответствующих заданному фильтру."
-                       FontSize="14"
-                       Foreground="#856404"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
-        </Border>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#FAFAFA"/>
+                        <Setter Property="Foreground" Value="#616161"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="FontSize" Value="12"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="BorderBrush" Value="#EEEEEE"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
 
-        <!-- Data Table -->
-        <DataGrid Grid.Row="4"
-                  ItemsSource="{Binding MonitorData}"
-                  AutoGenerateColumns="False"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False"
-                  IsReadOnly="True"
-                  SelectionMode="Single"
-                  GridLinesVisibility="All"
-                  HorizontalGridLinesBrush="#E0E0E0"
-                  VerticalGridLinesBrush="#E0E0E0"
-                  RowHeight="90"
-                  HeadersVisibility="Column"
-                  Background="White"
-                  BorderThickness="0"
-                  VerticalScrollBarVisibility="Auto"
-                  HorizontalScrollBarVisibility="Auto"
-                  Visibility="{Binding ShowNoResultsMessage, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=inverse}">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F5F5F5"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#E3F2FD"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
 
-            <DataGrid.ColumnHeaderStyle>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#F5F5F5"/>
-                    <Setter Property="Foreground" Value="#333"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="FontSize" Value="12"/>
-                    <Setter Property="Padding" Value="8,10"/>
-                    <Setter Property="BorderBrush" Value="#E0E0E0"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,1"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                </Style>
-            </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Padding" Value="4"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
 
-            <DataGrid.RowStyle>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Background" Value="White"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#F8F9FA"/>
-                        </Trigger>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#E3F2FD"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.RowStyle>
+                <DataGrid.Columns>
+                    <!-- Чекбокс -->
+                    <DataGridTemplateColumn Width="35">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding DataContext.SelectAll, RelativeSource={RelativeSource AncestorType=Page}}"
+                                          HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
-            <DataGrid.CellStyle>
-                <Style TargetType="DataGridCell">
-                    <Setter Property="BorderBrush" Value="#E0E0E0"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,0"/>
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                    <Setter Property="Padding" Value="4"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="Transparent"/>
-                            <Setter Property="Foreground" Value="Black"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.CellStyle>
-
-            <DataGrid.Columns>
-                <!-- Чекбокс выбора -->
-                <DataGridTemplateColumn Width="35">
-                    <DataGridTemplateColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <CheckBox IsChecked="{Binding DataContext.SelectAll, RelativeSource={RelativeSource AncestorType=Page}}"
-                                      HorizontalAlignment="Center"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.HeaderTemplate>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <CheckBox IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <!-- № (Номер) -->
-                <DataGridTemplateColumn Header="№" Width="70">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Image Source="{Binding StatusDot}" Width="12" Height="12" Margin="0,0,4,0"/>
-                                <TextBlock Text="{Binding Code}" FontSize="11" FontWeight="SemiBold"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <!-- ТП (Торговый пункт) -->
-                <DataGridTemplateColumn Header="ТП" Width="180">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="6,4" VerticalAlignment="Center">
-                                <TextBlock FontWeight="SemiBold" FontSize="12" Foreground="#1976D2" TextWrapping="Wrap">
-                                    <Run Text="{Binding Code, Mode=OneWay}"/>
-                                    <Run Text=" - '"/>
-                                    <Run Text="{Binding Name, Mode=OneWay}"/>
-                                    <Run Text="'"/>
-                                </TextBlock>
-                                <TextBlock Text="{Binding Address}" FontSize="10" Foreground="#757575"
-                                           TextWrapping="Wrap" Margin="0,3,0,0" MaxWidth="170"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <!-- Связь -->
-                <DataGridTemplateColumn Header="Связь" Width="90">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <Image Source="{Binding ConnectionDot}" Width="14" Height="14" Margin="0,0,3,0"/>
-                                    <Image Source="{Binding OperatorIcon}" Width="24" Height="24" Margin="0,0,3,0"/>
-                                    <Image Source="{Binding SignalIcon}" Width="22" Height="22"/>
+                    <!-- Статус + Код -->
+                    <DataGridTemplateColumn Header="№" Width="70">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Ellipse Width="10" Height="10" Margin="0,0,6,0">
+                                        <Ellipse.Style>
+                                            <Style TargetType="Ellipse">
+                                                <Setter Property="Fill" Value="#9E9E9E"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding MachineStatus}" Value="Working">
+                                                        <Setter Property="Fill" Value="#4CAF50"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding MachineStatus}" Value="NotWorking">
+                                                        <Setter Property="Fill" Value="#F44336"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding MachineStatus}" Value="OnMaintenance">
+                                                        <Setter Property="Fill" Value="#2196F3"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Ellipse.Style>
+                                    </Ellipse>
+                                    <TextBlock Text="{Binding Code}" FontSize="11" FontWeight="SemiBold"/>
                                 </StackPanel>
-                                <TextBlock Text="{Binding LoadInfo}" FontSize="9" Foreground="#757575"
-                                           HorizontalAlignment="Center" Margin="0,3,0,0"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
-                <!-- Загрузка (с прогресс-барами) -->
-                <DataGridTemplateColumn Header="Загрузка" Width="140">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel VerticalAlignment="Center" Margin="6,4">
-                                <!-- Общий процент загрузки -->
-                                <Border CornerRadius="4" Padding="6,3" HorizontalAlignment="Left" Margin="0,0,0,4"
-                                        Background="{Binding LoadBadgeColor, Converter={StaticResource ColorToBrushConverter}}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="/Assets/Icons/Other/Fillup.png" Width="14" Height="14" Margin="0,0,4,0"/>
+                    <!-- Торговая точка -->
+                    <DataGridTemplateColumn Header="Торговая точка" Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="8,4" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="12" Foreground="#1976D2" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Address}" FontSize="10" Foreground="#757575" TextWrapping="Wrap" Margin="0,2,0,0" MaxWidth="190"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Загрузка -->
+                    <DataGridTemplateColumn Header="Загрузка" Width="130">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center" Margin="6,4">
+                                    <Border CornerRadius="4" Padding="6,3" HorizontalAlignment="Left" Margin="0,0,0,4"
+                                            Background="{Binding LoadBadgeColor, Converter={StaticResource ColorToBrushConverter}}">
                                         <TextBlock Text="{Binding LoadPercent, StringFormat={}{0}%}"
-                                                   FontSize="12" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                                                   FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                    </Border>
+                                    <Grid Width="110">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/><RowDefinition/><RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <ProgressBar Grid.Row="0" Grid.Column="0" Value="{Binding CoffeeLoad}" Maximum="100" Height="5" Margin="0,0,2,2"
+                                                     Foreground="{Binding CoffeeLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="0" Grid.Column="1" Value="{Binding SugarLoad}" Maximum="100" Height="5" Margin="2,0,0,2"
+                                                     Foreground="{Binding SugarLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="1" Grid.Column="0" Value="{Binding MilkLoad}" Maximum="100" Height="5" Margin="0,0,2,2"
+                                                     Foreground="{Binding MilkLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="1" Grid.Column="1" Value="{Binding CupsLoad}" Maximum="100" Height="5" Margin="2,0,0,2"
+                                                     Foreground="{Binding CupsLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="2" Grid.Column="0" Value="{Binding LidsLoad}" Maximum="100" Height="5" Margin="0,0,2,0"
+                                                     Foreground="{Binding LidsLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="2" Grid.Column="1" Value="{Binding WaterLoad}" Maximum="100" Height="5" Margin="2,0,0,0"
+                                                     Foreground="{Binding WaterLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Денежные средства -->
+                    <DataGridTemplateColumn Header="Деньги" Width="130">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center" Margin="6,2">
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                                        <materialDesign:PackIcon Kind="Cash" Width="14" Height="14" Foreground="#4CAF50" Margin="0,0,4,0" VerticalAlignment="Center"/>
+                                        <TextBlock FontSize="11" VerticalAlignment="Center">
+                                            <Run Text="{Binding CashAmount, StringFormat={}{0:N0}, Mode=OneWay}"/><Run Text=" ₽"/>
+                                        </TextBlock>
                                     </StackPanel>
-                                </Border>
-                                <!-- Прогресс-бары ингредиентов -->
-                                <Grid Width="120">
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                                        <materialDesign:PackIcon Kind="CircleMultipleOutline" Width="14" Height="14" Foreground="#FF9800" Margin="0,0,4,0" VerticalAlignment="Center"/>
+                                        <TextBlock FontSize="11" VerticalAlignment="Center">
+                                            <Run Text="{Binding CoinCount, Mode=OneWay}"/><Run Text=" шт."/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="CashRefund" Width="14" Height="14" Foreground="#2196F3" Margin="0,0,4,0" VerticalAlignment="Center"/>
+                                        <TextBlock FontSize="11" VerticalAlignment="Center">
+                                            <Run Text="{Binding CoinAmount, StringFormat={}{0:N0}, Mode=OneWay}"/><Run Text=" ₽"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                    <TextBlock Text="{Binding LastEncashment}" FontSize="9" Foreground="#9E9E9E" Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- События -->
+                    <DataGridTemplateColumn Header="События" Width="80">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                                        <materialDesign:PackIcon Kind="CartOutline" Width="16" Height="16" Foreground="#4CAF50" Margin="0,0,4,0"/>
+                                        <TextBlock Text="{Binding SalesCount}" FontSize="12" Foreground="#4CAF50" FontWeight="SemiBold"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Wrench" Width="16" Height="16" Foreground="#FF9800" Margin="0,0,4,0"/>
+                                        <TextBlock Text="{Binding ServiceCount}" FontSize="12" Foreground="#FF9800" FontWeight="SemiBold"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Оборудование -->
+                    <DataGridTemplateColumn Header="Оборудование" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="115">
+                                    <materialDesign:PackIcon Kind="CreditCardOutline" Width="20" Height="20" Margin="2" ToolTip="Купюроприемник">
+                                        <materialDesign:PackIcon.Style>
+                                            <Style TargetType="materialDesign:PackIcon">
+                                                <Setter Property="Foreground" Value="#F44336"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding BillValidatorOk}" Value="True">
+                                                        <Setter Property="Foreground" Value="#4CAF50"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </materialDesign:PackIcon.Style>
+                                    </materialDesign:PackIcon>
+                                    <materialDesign:PackIcon Kind="CircleMultiple" Width="20" Height="20" Margin="2" ToolTip="Монетоприемник">
+                                        <materialDesign:PackIcon.Style>
+                                            <Style TargetType="materialDesign:PackIcon">
+                                                <Setter Property="Foreground" Value="#F44336"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding CoinAcceptorOk}" Value="True">
+                                                        <Setter Property="Foreground" Value="#4CAF50"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </materialDesign:PackIcon.Style>
+                                    </materialDesign:PackIcon>
+                                    <materialDesign:PackIcon Kind="ContactlessPayment" Width="20" Height="20" Margin="2" ToolTip="Безнал">
+                                        <materialDesign:PackIcon.Style>
+                                            <Style TargetType="materialDesign:PackIcon">
+                                                <Setter Property="Foreground" Value="#F44336"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding CashlessOk}" Value="True">
+                                                        <Setter Property="Foreground" Value="#4CAF50"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </materialDesign:PackIcon.Style>
+                                    </materialDesign:PackIcon>
+                                    <materialDesign:PackIcon Kind="CashRegister" Width="20" Height="20" Margin="2" ToolTip="ККМ">
+                                        <materialDesign:PackIcon.Style>
+                                            <Style TargetType="materialDesign:PackIcon">
+                                                <Setter Property="Foreground" Value="#F44336"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding CashRegisterOk}" Value="True">
+                                                        <Setter Property="Foreground" Value="#4CAF50"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </materialDesign:PackIcon.Style>
+                                    </materialDesign:PackIcon>
+                                    <materialDesign:PackIcon Kind="Monitor" Width="20" Height="20" Margin="2" ToolTip="Дисплей">
+                                        <materialDesign:PackIcon.Style>
+                                            <Style TargetType="materialDesign:PackIcon">
+                                                <Setter Property="Foreground" Value="#F44336"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding DisplayOk}" Value="True">
+                                                        <Setter Property="Foreground" Value="#4CAF50"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </materialDesign:PackIcon.Style>
+                                    </materialDesign:PackIcon>
+                                    <materialDesign:PackIcon Kind="PowerPlug" Width="20" Height="20" Margin="2" ToolTip="Питание" Foreground="#4CAF50"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Инфо -->
+                    <DataGridTemplateColumn Header="Инфо" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4">
+                                    <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,4">
+                                        <materialDesign:PackIcon Kind="PackageVariantRemove" Width="16" Height="16" Margin="1" Foreground="#F44336"
+                                                                 Visibility="{Binding HasLowGoods, Converter={StaticResource BoolToVisibilityConverter}}" ToolTip="Мало товара"/>
+                                        <materialDesign:PackIcon Kind="CashRemove" Width="16" Height="16" Margin="1" Foreground="#FF9800"
+                                                                 Visibility="{Binding HasFewChange, Converter={StaticResource BoolToVisibilityConverter}}" ToolTip="Мало сдачи"/>
+                                        <materialDesign:PackIcon Kind="SafeSquareOutline" Width="16" Height="16" Margin="1" Foreground="#F44336"
+                                                                 Visibility="{Binding NeedsEncashment, Converter={StaticResource BoolToVisibilityConverter}}" ToolTip="Инкассация"/>
+                                        <materialDesign:PackIcon Kind="Wrench" Width="16" Height="16" Margin="1" Foreground="#FF9800"
+                                                                 Visibility="{Binding NeedsService, Converter={StaticResource BoolToVisibilityConverter}}" ToolTip="Обслуживание"/>
+                                    </WrapPanel>
+                                    <TextBlock Text="{Binding LastActivity}" FontSize="10" Foreground="#757575" TextAlignment="Center" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </materialDesign:Card>
+
+        <!-- ═══ ПЛИТКИ ═══ -->
+        <ScrollViewer Grid.Row="2" Margin="16,12,16,0" VerticalScrollBarVisibility="Auto"
+                      Visibility="{Binding IsTileView, Converter={StaticResource BoolToVisibilityConverter}}">
+            <ItemsControl ItemsSource="{Binding MonitorData}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card Width="280" Margin="0,0,12,12" Padding="14">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- Заголовок плитки -->
+                                <Grid Grid.Row="0" Margin="0,0,0,10">
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Ellipse Grid.Column="0" Width="12" Height="12" Margin="0,0,8,0" VerticalAlignment="Center">
+                                        <Ellipse.Style>
+                                            <Style TargetType="Ellipse">
+                                                <Setter Property="Fill" Value="#9E9E9E"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding MachineStatus}" Value="Working">
+                                                        <Setter Property="Fill" Value="#4CAF50"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding MachineStatus}" Value="NotWorking">
+                                                        <Setter Property="Fill" Value="#F44336"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding MachineStatus}" Value="OnMaintenance">
+                                                        <Setter Property="Fill" Value="#2196F3"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Ellipse.Style>
+                                    </Ellipse>
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="SemiBold" Foreground="#1976D2" TextTrimming="CharacterEllipsis"/>
+                                        <TextBlock Text="{Binding Address}" FontSize="10" Foreground="#757575" TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="2" Text="{Binding Code}" FontSize="10" Foreground="#9E9E9E" VerticalAlignment="Top"/>
+                                </Grid>
+
+                                <!-- Загрузка -->
+                                <Grid Grid.Row="1" Margin="0,0,0,8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <!-- Кофе -->
-                                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,4,0">
-                                        <ProgressBar Value="{Binding CoffeeLoad}" Maximum="100" Height="6"
-                                                     Foreground="{Binding CoffeeLoadColor, Converter={StaticResource ColorToBrushConverter}}"
-                                                     Background="#E0E0E0"/>
-                                    </StackPanel>
-                                    <!-- Сахар -->
-                                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="4,0,0,0">
-                                        <ProgressBar Value="{Binding SugarLoad}" Maximum="100" Height="6"
-                                                     Foreground="{Binding SugarLoadColor, Converter={StaticResource ColorToBrushConverter}}"
-                                                     Background="#E0E0E0"/>
-                                    </StackPanel>
-                                    <!-- Молоко -->
-                                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,2,4,0">
-                                        <ProgressBar Value="{Binding MilkLoad}" Maximum="100" Height="6"
-                                                     Foreground="{Binding MilkLoadColor, Converter={StaticResource ColorToBrushConverter}}"
-                                                     Background="#E0E0E0"/>
-                                    </StackPanel>
-                                    <!-- Стаканы -->
-                                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="4,2,0,0">
-                                        <ProgressBar Value="{Binding CupsLoad}" Maximum="100" Height="6"
-                                                     Foreground="{Binding CupsLoadColor, Converter={StaticResource ColorToBrushConverter}}"
-                                                     Background="#E0E0E0"/>
-                                    </StackPanel>
-                                    <!-- Крышки -->
-                                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,2,4,0">
-                                        <ProgressBar Value="{Binding LidsLoad}" Maximum="100" Height="6"
-                                                     Foreground="{Binding LidsLoadColor, Converter={StaticResource ColorToBrushConverter}}"
-                                                     Background="#E0E0E0"/>
-                                    </StackPanel>
-                                    <!-- Вода -->
-                                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="4,2,0,0">
-                                        <ProgressBar Value="{Binding WaterLoad}" Maximum="100" Height="6"
-                                                     Foreground="{Binding WaterLoadColor, Converter={StaticResource ColorToBrushConverter}}"
-                                                     Background="#E0E0E0"/>
-                                    </StackPanel>
+                                    <Border Grid.Column="0" CornerRadius="4" Padding="8,4" Margin="0,0,10,0"
+                                            Background="{Binding LoadBadgeColor, Converter={StaticResource ColorToBrushConverter}}">
+                                        <TextBlock Text="{Binding LoadPercent, StringFormat={}{0}%}" FontSize="13" FontWeight="Bold" Foreground="White"/>
+                                    </Border>
+                                    <Grid Grid.Column="1" VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/><RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <ProgressBar Grid.Row="0" Grid.Column="0" Value="{Binding CoffeeLoad}" Maximum="100" Height="4" Margin="0,0,2,2"
+                                                     Foreground="{Binding CoffeeLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="0" Grid.Column="1" Value="{Binding SugarLoad}" Maximum="100" Height="4" Margin="2,0,2,2"
+                                                     Foreground="{Binding SugarLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="0" Grid.Column="2" Value="{Binding MilkLoad}" Maximum="100" Height="4" Margin="2,0,0,2"
+                                                     Foreground="{Binding MilkLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="1" Grid.Column="0" Value="{Binding CupsLoad}" Maximum="100" Height="4" Margin="0,0,2,0"
+                                                     Foreground="{Binding CupsLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="1" Grid.Column="1" Value="{Binding LidsLoad}" Maximum="100" Height="4" Margin="2,0,2,0"
+                                                     Foreground="{Binding LidsLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                        <ProgressBar Grid.Row="1" Grid.Column="2" Value="{Binding WaterLoad}" Maximum="100" Height="4" Margin="2,0,0,0"
+                                                     Foreground="{Binding WaterLoadColor, Converter={StaticResource ColorToBrushConverter}}" Background="#E0E0E0"/>
+                                    </Grid>
                                 </Grid>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
 
-                <!-- Денежные средства -->
-                <DataGridTemplateColumn Header="Денежные средства" Width="140">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel VerticalAlignment="Center" Margin="6,2">
-                                <!-- Купюры -->
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,3">
-                                    <Image Source="/Assets/Icons/States/Bills.png" Width="16" Height="16" Margin="0,0,4,0"/>
-                                    <TextBlock FontSize="11" VerticalAlignment="Center">
-                                        <Run Text="{Binding CashAmount, StringFormat={}{0:N0}, Mode=OneWay}"/>
-                                        <Run Text=" р."/>
-                                    </TextBlock>
-                                </StackPanel>
-                                <!-- Монеты -->
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,3">
-                                    <Image Source="/Assets/Icons/States/Coins.png" Width="16" Height="16" Margin="0,0,4,0"/>
-                                    <TextBlock FontSize="11" VerticalAlignment="Center">
-                                        <Run Text="{Binding CoinCount, Mode=OneWay}"/>
-                                        <Run Text=" шт."/>
-                                    </TextBlock>
-                                </StackPanel>
-                                <!-- Сдача -->
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Assets/Icons/States/Change.png" Width="16" Height="16" Margin="0,0,4,0"/>
-                                    <TextBlock FontSize="11" VerticalAlignment="Center">
-                                        <Run Text="{Binding CoinAmount, StringFormat={}{0:N0}, Mode=OneWay}"/>
-                                        <Run Text=" р."/>
-                                    </TextBlock>
-                                </StackPanel>
-                                <!-- Последняя инкассация -->
-                                <TextBlock FontSize="9" Foreground="#757575" Margin="0,3,0,0">
-                                    <Run Text="o"/>
-                                    <Run Text=" "/>
-                                    <Run Text="{Binding LastEncashment, Mode=OneWay}"/>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                                <!-- Деньги -->
+                                <Border Grid.Row="2" BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" Padding="0,8,0,8">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                                            <TextBlock Text="Купюры" FontSize="9" Foreground="#9E9E9E" HorizontalAlignment="Center"/>
+                                            <TextBlock FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Center">
+                                                <Run Text="{Binding CashAmount, StringFormat={}{0:N0}, Mode=OneWay}"/><Run Text="₽"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                                            <TextBlock Text="Монеты" FontSize="9" Foreground="#9E9E9E" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{Binding CoinCount, StringFormat={}{0} шт.}" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                                            <TextBlock Text="Сдача" FontSize="9" Foreground="#9E9E9E" HorizontalAlignment="Center"/>
+                                            <TextBlock FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Center">
+                                                <Run Text="{Binding CoinAmount, StringFormat={}{0:N0}, Mode=OneWay}"/><Run Text="₽"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
 
-                <!-- События -->
-                <DataGridTemplateColumn Header="События" Width="90">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <!-- Продажи -->
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
-                                    <Image Source="/Assets/Icons/States/Sale.png" Width="18" Height="18" Margin="0,0,4,0"/>
-                                    <TextBlock Text="{Binding SalesCount}" FontSize="12" VerticalAlignment="Center"
-                                               Foreground="#4CAF50" FontWeight="SemiBold"/>
-                                </StackPanel>
-                                <!-- Сервис -->
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Assets/Icons/States/Service.png" Width="18" Height="18" Margin="0,0,4,0"/>
-                                    <TextBlock Text="{Binding ServiceCount}" FontSize="12" VerticalAlignment="Center"
-                                               Foreground="#FF9800" FontWeight="SemiBold"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                                <!-- События + оборудование -->
+                                <Border Grid.Row="3" BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" Padding="0,8,0,6">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,12,0">
+                                            <materialDesign:PackIcon Kind="CartOutline" Width="14" Height="14" Foreground="#4CAF50" Margin="0,0,2,0"/>
+                                            <TextBlock Text="{Binding SalesCount}" FontSize="12" Foreground="#4CAF50" FontWeight="SemiBold" Margin="0,0,8,0"/>
+                                            <materialDesign:PackIcon Kind="Wrench" Width="14" Height="14" Foreground="#FF9800" Margin="0,0,2,0"/>
+                                            <TextBlock Text="{Binding ServiceCount}" FontSize="12" Foreground="#FF9800" FontWeight="SemiBold"/>
+                                        </StackPanel>
+                                        <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
+                                            <materialDesign:PackIcon Kind="PackageVariantRemove" Width="14" Height="14" Margin="1" Foreground="#F44336"
+                                                                     Visibility="{Binding HasLowGoods, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                            <materialDesign:PackIcon Kind="CashRemove" Width="14" Height="14" Margin="1" Foreground="#FF9800"
+                                                                     Visibility="{Binding HasFewChange, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                            <materialDesign:PackIcon Kind="SafeSquareOutline" Width="14" Height="14" Margin="1" Foreground="#F44336"
+                                                                     Visibility="{Binding NeedsEncashment, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                            <materialDesign:PackIcon Kind="AlertCircle" Width="14" Height="14" Margin="1" Foreground="#F44336"
+                                                                     Visibility="{Binding HasProblems, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                        </WrapPanel>
+                                    </Grid>
+                                </Border>
 
-                <!-- Оборудование -->
-                <DataGridTemplateColumn Header="Оборудование" Width="150">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="145">
-                                <Image Source="{Binding BillValidatorIcon}" Width="22" Height="22" Margin="2"
-                                       ToolTip="Купюроприемник"/>
-                                <Image Source="{Binding CoinAcceptorIcon}" Width="22" Height="22" Margin="2"
-                                       ToolTip="Монетоприемник"/>
-                                <Image Source="{Binding CashlessIcon}" Width="22" Height="22" Margin="2"
-                                       ToolTip="Безнал"/>
-                                <Image Source="{Binding CashRegisterIcon}" Width="22" Height="22" Margin="2"
-                                       ToolTip="Кассовый аппарат"/>
-                                <Image Source="{Binding DisplayIcon}" Width="22" Height="22" Margin="2"
-                                       ToolTip="Дисплей"/>
-                                <Image Source="{Binding PowerIcon}" Width="22" Height="22" Margin="2"
-                                       ToolTip="Питание"/>
-                            </WrapPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                                <!-- Последняя активность -->
+                                <TextBlock Grid.Row="4" Text="{Binding LastActivity, StringFormat=Последняя активность: {0}}"
+                                           FontSize="10" Foreground="#9E9E9E" Margin="0,4,0,0"/>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
 
-                <!-- Информация -->
-                <DataGridTemplateColumn Header="Информация" Width="110">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4">
-                                <!-- Статусные иконки -->
-                                <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,4">
-                                    <Image Source="{Binding FewGoodsIcon}" Width="18" Height="18" Margin="1"
-                                           Visibility="{Binding HasLowGoods, Converter={StaticResource BoolToVisibilityConverter}}"
-                                           ToolTip="Мало товара"/>
-                                    <Image Source="{Binding FewChangeIcon}" Width="18" Height="18" Margin="1"
-                                           Visibility="{Binding HasFewChange, Converter={StaticResource BoolToVisibilityConverter}}"
-                                           ToolTip="Мало сдачи"/>
-                                    <Image Source="{Binding NoEncashmentIcon}" Width="18" Height="18" Margin="1"
-                                           Visibility="{Binding NeedsEncashment, Converter={StaticResource BoolToVisibilityConverter}}"
-                                           ToolTip="Нужна инкассация"/>
-                                    <Image Source="{Binding NoServiceIcon}" Width="18" Height="18" Margin="1"
-                                           Visibility="{Binding NeedsService, Converter={StaticResource BoolToVisibilityConverter}}"
-                                           ToolTip="Нужно обслуживание"/>
-                                </WrapPanel>
-                                <TextBlock Text="{Binding LastActivity}"
-                                           FontSize="10"
-                                           Foreground="#757575"
-                                           TextWrapping="Wrap"
-                                           TextAlignment="Center"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <!-- Доп. -->
-                <DataGridTemplateColumn Header="Доп." Width="85">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <!-- Иконки проблем -->
-                                <Image Source="{Binding HardwareProblemsIcon}" Width="20" Height="20" Margin="2"
-                                       Visibility="{Binding HasProblems, Converter={StaticResource BoolToVisibilityConverter}}"
-                                       ToolTip="Проблемы с оборудованием"/>
-                                <Image Source="{Binding NoSalesIcon}" Width="20" Height="20" Margin="2"
-                                       Visibility="{Binding NoSales, Converter={StaticResource BoolToVisibilityConverter}}"
-                                       ToolTip="Нет продаж"/>
-                                <Image Source="{Binding DifferentSettingsIcon}" Width="20" Height="20" Margin="2"
-                                       Visibility="{Binding HasDifferentSettings, Converter={StaticResource BoolToVisibilityConverter}}"
-                                       ToolTip="Различные настройки"/>
-                                <!-- Кнопки действий -->
-                                <Button Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="2" ToolTip="Команды">
-                                    <Image Source="/Assets/Icons/Other/Commands.png" Width="20" Height="20"/>
-                                </Button>
-                                <Button Background="Transparent" BorderThickness="0" Cursor="Hand" Padding="2" ToolTip="Подробности">
-                                    <Image Source="/Assets/Icons/Other/Details.png" Width="20" Height="20"/>
-                                </Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-
-        <!-- Footer -->
-        <Border Grid.Row="5" Background="#F8F9FA" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0" Padding="15,10">
+        <!-- ═══ FOOTER ═══ -->
+        <materialDesign:Card Grid.Row="3" Margin="16,12,16,16" Padding="14">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" VerticalAlignment="Center" FontSize="12">
-                    <Run Text="Итого автоматов:"/>
-                    <Run Text=" "/>
-                    <Run Text="{Binding TotalMachines, FallbackValue=0}" FontWeight="SemiBold"/>
-                    <Run Text=" / "/>
-                    <Run Text="{Binding OnlineMachines, FallbackValue=0}" Foreground="#4CAF50" FontWeight="SemiBold"/>
-                    <Run Text=" / "/>
-                    <Run Text="{Binding OfflineMachines, FallbackValue=0}" Foreground="#F44336" FontWeight="SemiBold"/>
-                    <Run Text=". Денег в автоматах:"/>
-                    <Run Text=" "/>
-                    <Run Text="{Binding TotalCash, StringFormat={}{0:N0}р, FallbackValue=0р}" FontWeight="SemiBold"/>
-                    <Run Text=" (сдача)"/>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" FontSize="12" Foreground="#616161">
+                    <Run Text="Итого:"/>
+                    <Run Text="{Binding TotalMachines, FallbackValue=0, Mode=OneWay}" FontWeight="SemiBold"/>
+                    <Run Text=" |  Онлайн:"/>
+                    <Run Text="{Binding OnlineMachines, FallbackValue=0, Mode=OneWay}" FontWeight="SemiBold" Foreground="#4CAF50"/>
+                    <Run Text=" |  Офлайн:"/>
+                    <Run Text="{Binding OfflineMachines, FallbackValue=0, Mode=OneWay}" FontWeight="SemiBold" Foreground="#F44336"/>
+                    <Run Text=" |  Деньги в ТА:"/>
+                    <Run Text="{Binding TotalCash, StringFormat={}{0:N0} ₽, FallbackValue=0 ₽, Mode=OneWay}" FontWeight="SemiBold"/>
                 </TextBlock>
 
-                <Button Grid.Column="1"
-                        Command="{Binding ExportCommand}"
-                        Background="#28A745"
-                        Foreground="White"
-                        Padding="20,8"
-                        FontSize="12"
-                        BorderThickness="0"
-                        Cursor="Hand">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="4" Padding="{TemplateBinding Padding}">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xE896;" FontFamily="Segoe MDL2 Assets" FontSize="14"
-                                               VerticalAlignment="Center" Margin="0,0,6,0" Foreground="White"/>
-                                    <TextBlock Text="Экспорт в Excel" Foreground="White"/>
-                                </StackPanel>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button Grid.Column="1" Command="{Binding ExportCommand}"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Background="#4CAF50" BorderBrush="#4CAF50" Height="32">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FileExport" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBlock Text="Экспорт"/>
+                    </StackPanel>
                 </Button>
             </Grid>
-        </Border>
+        </materialDesign:Card>
     </Grid>
 </Page>

@@ -1,0 +1,263 @@
+<Page x:Class="VendingMachineDesktop.Views.Pages.ReportsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:converters="clr-namespace:VendingMachineDesktop.Utilities.Converters"
+      Background="#F5F5F5">
+
+    <Page.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <materialDesign:Card Grid.Row="0" Padding="20" Margin="0,0,0,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Детальные отчеты" FontSize="24" FontWeight="SemiBold" Foreground="#212121" Margin="0,0,0,10"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Период с" VerticalAlignment="Center" Foreground="#757575" Margin="0,0,10,0"/>
+                        <DatePicker SelectedDate="{Binding DateFrom}" Width="140"
+                                    Style="{StaticResource WhiteOutlinedDatePicker}"/>
+                        <TextBlock Text="по" VerticalAlignment="Center" Foreground="#757575" Margin="10,0,10,0"/>
+                        <DatePicker SelectedDate="{Binding DateTo}" Width="140"
+                                    Style="{StaticResource WhiteOutlinedDatePicker}"/>
+                        <Button Command="{Binding ApplyFilterCommand}"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Margin="15,0,0,0" Height="36">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="FilterOutline" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="Применить"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <Button Grid.Column="1" Command="{Binding ExportCsvCommand}"
+                        Style="{StaticResource MaterialDesignOutlinedButton}" Height="36" VerticalAlignment="Bottom">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FileExport" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBlock Text="Экспорт"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </materialDesign:Card>
+
+        <!-- Tabs -->
+        <TabControl Grid.Row="1" Grid.RowSpan="2"
+                    SelectedIndex="{Binding SelectedTabIndex}"
+                    Style="{StaticResource MaterialDesignNavigationRailTabControl}">
+
+            <!-- Sales Tab -->
+            <TabItem Header="Продажи">
+                <Grid Margin="0,15,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Summary Cards -->
+                    <UniformGrid Grid.Row="0" Columns="4" Margin="0,0,0,15">
+                        <materialDesign:Card Padding="16" Margin="0,0,10,0">
+                            <StackPanel>
+                                <TextBlock Text="Всего продаж" FontSize="12" Foreground="#757575"/>
+                                <TextBlock Text="{Binding TotalSales}" FontSize="28" FontWeight="Bold" Foreground="#2196F3"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="16" Margin="5,0,5,0">
+                            <StackPanel>
+                                <TextBlock Text="Общая выручка" FontSize="12" Foreground="#757575"/>
+                                <TextBlock Text="{Binding TotalRevenue, StringFormat={}{0:N2} ₽}" FontSize="28" FontWeight="Bold" Foreground="#4CAF50"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="16" Margin="5,0,5,0">
+                            <StackPanel>
+                                <TextBlock Text="Кол-во товаров" FontSize="12" Foreground="#757575"/>
+                                <TextBlock Text="{Binding TotalQuantity}" FontSize="28" FontWeight="Bold" Foreground="#FF9800"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="16" Margin="10,0,0,0">
+                            <StackPanel>
+                                <TextBlock Text="Средний чек" FontSize="12" Foreground="#757575"/>
+                                <TextBlock Text="{Binding AverageCheck, StringFormat={}{0:N2} ₽}" FontSize="28" FontWeight="Bold" Foreground="#9C27B0"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </UniformGrid>
+
+                    <!-- Sales DataGrid -->
+                    <materialDesign:Card Grid.Row="1">
+                        <DataGrid ItemsSource="{Binding SalesData}"
+                                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                  SelectionMode="Single" IsReadOnly="True" RowHeight="44"
+                                  HeadersVisibility="All" GridLinesVisibility="Horizontal" AlternationCount="2">
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="AlternationIndex" Value="1"><Setter Property="Background" Value="#FAFAFA"/></Trigger>
+                                        <Trigger Property="IsSelected" Value="True"><Setter Property="Background" Value="#E3F2FD"/></Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Дата" Binding="{Binding Timestamp, StringFormat={}{0:dd.MM.yyyy HH:mm}}" Width="160" FontSize="13"/>
+                                <DataGridTextColumn Header="Товар" Binding="{Binding ProductName}" Width="*" MinWidth="150" FontSize="13"/>
+                                <DataGridTextColumn Header="Автомат" Binding="{Binding MachineName}" Width="180" FontSize="13"/>
+                                <DataGridTextColumn Header="Кол-во" Binding="{Binding Quantity}" Width="80" FontSize="13"/>
+                                <DataGridTextColumn Header="Сумма" Binding="{Binding TotalPrice, StringFormat={}{0:N2} ₽}" Width="120" FontSize="13"/>
+                                <DataGridTextColumn Header="Оплата" Binding="{Binding PaymentMethod}" Width="120" FontSize="13"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </materialDesign:Card>
+                </Grid>
+            </TabItem>
+
+            <!-- Maintenance Tab -->
+            <TabItem Header="Обслуживание">
+                <Grid Margin="0,15,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Summary Cards -->
+                    <UniformGrid Grid.Row="0" Columns="3" Margin="0,0,0,15">
+                        <materialDesign:Card Padding="16" Margin="0,0,10,0">
+                            <StackPanel>
+                                <TextBlock Text="Всего записей" FontSize="12" Foreground="#757575"/>
+                                <TextBlock Text="{Binding MaintenanceTotal}" FontSize="28" FontWeight="Bold" Foreground="#2196F3"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="16" Margin="5,0,5,0">
+                            <StackPanel>
+                                <TextBlock Text="Завершено" FontSize="12" Foreground="#757575"/>
+                                <TextBlock Text="{Binding MaintenanceCompleted}" FontSize="28" FontWeight="Bold" Foreground="#4CAF50"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="16" Margin="10,0,0,0">
+                            <StackPanel>
+                                <TextBlock Text="Ожидает" FontSize="12" Foreground="#757575"/>
+                                <TextBlock Text="{Binding MaintenancePending}" FontSize="28" FontWeight="Bold" Foreground="#FF9800"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </UniformGrid>
+
+                    <!-- Maintenance DataGrid -->
+                    <materialDesign:Card Grid.Row="1">
+                        <DataGrid ItemsSource="{Binding MaintenanceData}"
+                                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                  SelectionMode="Single" IsReadOnly="True" RowHeight="44"
+                                  HeadersVisibility="All" GridLinesVisibility="Horizontal" AlternationCount="2">
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="AlternationIndex" Value="1"><Setter Property="Background" Value="#FAFAFA"/></Trigger>
+                                        <Trigger Property="IsSelected" Value="True"><Setter Property="Background" Value="#E3F2FD"/></Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}" Width="120" FontSize="13"/>
+                                <DataGridTextColumn Header="Автомат" Binding="{Binding MachineName}" Width="180" FontSize="13"/>
+                                <DataGridTextColumn Header="Описание работ" Binding="{Binding WorkDescription}" Width="*" MinWidth="200" FontSize="13"/>
+                                <DataGridTextColumn Header="Проблемы" Binding="{Binding IssuesFound, TargetNullValue='-'}" Width="200" FontSize="13"/>
+                                <DataGridTextColumn Header="Техник" Binding="{Binding TechnicianName}" Width="150" FontSize="13"/>
+                                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="120" FontSize="13"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </materialDesign:Card>
+                </Grid>
+            </TabItem>
+
+            <!-- Revenue Tab -->
+            <TabItem Header="Выручка">
+                <Grid Margin="0,15,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Daily Revenue -->
+                    <materialDesign:Card Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,15" Padding="16">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Ежедневная выручка" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding DailyRevenueData}"
+                                      AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                      SelectionMode="Single" IsReadOnly="True" RowHeight="40"
+                                      HeadersVisibility="All" GridLinesVisibility="Horizontal">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}" Width="120" FontSize="13"/>
+                                    <DataGridTextColumn Header="Выручка" Binding="{Binding Revenue, StringFormat={}{0:N2} ₽}" Width="*" FontSize="13"/>
+                                    <DataGridTextColumn Header="Продаж" Binding="{Binding SalesCount}" Width="100" FontSize="13"/>
+                                    <DataGridTextColumn Header="Товаров" Binding="{Binding Quantity}" Width="100" FontSize="13"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </materialDesign:Card>
+
+                    <!-- By Machine -->
+                    <materialDesign:Card Grid.Row="1" Grid.Column="0" Margin="0,0,8,0" Padding="16">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="По автоматам" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding MachineRevenueData}"
+                                      AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                      SelectionMode="Single" IsReadOnly="True" RowHeight="40"
+                                      HeadersVisibility="All" GridLinesVisibility="Horizontal">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Автомат" Binding="{Binding MachineName}" Width="*" FontSize="13"/>
+                                    <DataGridTextColumn Header="Выручка" Binding="{Binding Revenue, StringFormat={}{0:N2} ₽}" Width="140" FontSize="13"/>
+                                    <DataGridTextColumn Header="Продаж" Binding="{Binding SalesCount}" Width="80" FontSize="13"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </materialDesign:Card>
+
+                    <!-- By Payment Method -->
+                    <materialDesign:Card Grid.Row="1" Grid.Column="1" Margin="8,0,0,0" Padding="16">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="По способу оплаты" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding PaymentMethodData}"
+                                      AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                      SelectionMode="Single" IsReadOnly="True" RowHeight="40"
+                                      HeadersVisibility="All" GridLinesVisibility="Horizontal">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Способ" Binding="{Binding Method}" Width="*" FontSize="13"/>
+                                    <DataGridTextColumn Header="Выручка" Binding="{Binding Revenue, StringFormat={}{0:N2} ₽}" Width="140" FontSize="13"/>
+                                    <DataGridTextColumn Header="Кол-во" Binding="{Binding Count}" Width="80" FontSize="13"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </materialDesign:Card>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

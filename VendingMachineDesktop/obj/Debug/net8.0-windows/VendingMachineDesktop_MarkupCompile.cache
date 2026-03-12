@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Ernesto\Desktop\Chempionat\VendingMachineDesktop\obj\Debug\net8.0-windows\
+C:\Users\Ernesto\Desktop\Курсач\VendingMachineDesktop\obj\Debug\net8.0-windows\
 VendingMachineDesktop
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\Ernesto\Desktop\Chempionat\VendingMachineDesktop\App.xaml
-121297087913
+C:\Users\Ernesto\Desktop\Курсач\VendingMachineDesktop\App.xaml
+23-2022927813
 22-2075574007
-45832595618
+74557228103
 2201609132081
-Views\Dialogs\AddEditCompanyDialog.xaml;Views\Dialogs\AddEditVendingMachineDialog.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\Pages\AdminPage.xaml;Views\Pages\CompaniesPage.xaml;Views\Pages\DashboardPage.xaml;Views\Pages\DashboardPageSimple.xaml;Views\Pages\MonitorPage.xaml;Views\Pages\UnderDevelopmentPage.xaml;Views\Pages\VendingMachinesPage.xaml;Views\TestWindow.xaml;
+Views\Dialogs\AddEditCompanyDialog.xaml;Views\Dialogs\AddEditContractDialog.xaml;Views\Dialogs\AddEditModemDialog.xaml;Views\Dialogs\AddEditNewsDialog.xaml;Views\Dialogs\AddEditProductDialog.xaml;Views\Dialogs\AddEditUserDialog.xaml;Views\Dialogs\AddEditVendingMachineDialog.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\Pages\AdditionalPage.xaml;Views\Pages\AdminPage.xaml;Views\Pages\CompaniesPage.xaml;Views\Pages\ContractsPage.xaml;Views\Pages\DashboardPage.xaml;Views\Pages\DashboardPageSimple.xaml;Views\Pages\InventoryPage.xaml;Views\Pages\ModemsPage.xaml;Views\Pages\MonitorPage.xaml;Views\Pages\ReportsPage.xaml;Views\Pages\UnderDevelopmentPage.xaml;Views\Pages\UsersPage.xaml;Views\Pages\VendingMachinesPage.xaml;Views\TestWindow.xaml;
 
 False
 

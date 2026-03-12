@@ -47,56 +47,85 @@ public class DashboardController : ControllerBase
     [HttpGet]
     public async Task<ActionResult> GetDashboard()
     {
-        // Подсчёт общего количества автоматов в системе
         var totalMachines = await _context.VendingMachines.CountAsync();
-
-        // Подсчёт работающих автоматов (Status = "Working")
-        // Другие возможные статусы: "NotWorking", "OnMaintenance"
         var workingMachines = await _context.VendingMachines.CountAsync(vm => vm.Status == "Working");
+        var notWorkingMachines = await _context.VendingMachines.CountAsync(vm => vm.Status == "NotWorking");
+        var onMaintenance = totalMachines - workingMachines - notWorkingMachines;
+        if (onMaintenance < 0) onMaintenance = 0;
 
-        // Расчёт эффективности сети как процент работающих автоматов
-        // Защита от деления на ноль при пустой БД
         var efficiency = totalMachines > 0 ? (decimal)workingMachines / totalMachines * 100 : 0;
 
-        // Агрегация данных по продажам
-        var totalSales = await _context.Sales.CountAsync();
+        // Вчерашний день
+        var yesterdayStart = DateTime.UtcNow.Date.AddDays(-1);
+        var yesterdayEnd = DateTime.UtcNow.Date;
 
-        // Сумма всех продаж с обработкой null (если таблица пуста)
-        // Cast к nullable decimal нужен для корректной работы SumAsync
-        var totalRevenue = await _context.Sales.SumAsync(s => (decimal?)s.TotalPrice) ?? 0;
+        // Общая выручка (сумма в кассах автоматов)
+        var totalIncome = await _context.VendingMachines.SumAsync(vm => (decimal?)vm.TotalIncome) ?? 0;
 
-        // Получение 5 последних активных новостей для ленты на главной странице
-        // IsActive = true фильтрует только опубликованные новости
+        // Выручка вчера
+        var yesterdaySales = await _context.Sales
+            .Where(s => s.Timestamp >= yesterdayStart && s.Timestamp < yesterdayEnd)
+            .ToListAsync();
+        var yesterdayRevenue = yesterdaySales.Sum(s => s.TotalPrice);
+        var yesterdaySalesCount = yesterdaySales.Count;
+
+        // Сдача в ТА (примерно 30% от наличных продаж)
+        var cashSalesTotal = yesterdaySales.Where(s => s.PaymentMethod == "Cash").Sum(s => s.TotalPrice);
+        var changeAmount = Math.Round(cashSalesTotal * 0.3m, 0);
+
+        // Обслуживание по плану (запланировано на ближайшие 7 дней)
+        var maintenanceCount = await _context.MaintenanceRecords
+            .CountAsync(m => m.Status == "Scheduled" && m.Date >= DateTime.UtcNow.Date && m.Date <= DateTime.UtcNow.Date.AddDays(7));
+
+        // Динамика продаж за последние 30 дней (по дням)
+        var salesStartDate = DateTime.UtcNow.AddDays(-30);
+        var salesDynamics = await _context.Sales
+            .Where(s => s.Timestamp >= salesStartDate)
+            .GroupBy(s => s.Timestamp.Date)
+            .Select(g => new
+            {
+                Date = g.Key,
+                Amount = g.Sum(s => s.TotalPrice),
+                Quantity = g.Count()
+            })
+            .OrderBy(x => x.Date)
+            .ToListAsync();
+
+        // Новости
         var recentNews = await _context.News
             .Where(n => n.IsActive)
-            .OrderByDescending(n => n.PublishedAt)  // Сначала самые новые
-            .Take(5)
-            .Select(n => new  // Проекция только нужных полей (оптимизация)
+            .OrderByDescending(n => n.PublishedAt)
+            .Take(8)
+            .Select(n => new
             {
                 n.Id,
                 n.Title,
                 n.Content,
-                n.PublishedAt
+                Date = n.PublishedAt
             })
             .ToListAsync();
 
-        // Формирование ответа с агрегированными данными
         return Ok(new
         {
-            NetworkEfficiency = Math.Round(efficiency, 2),  // Округление до 2 знаков
+            NetworkEfficiency = Math.Round(efficiency, 2),
             NetworkStatus = new
             {
-                Total = totalMachines,
                 Working = workingMachines,
-                NotWorking = totalMachines - workingMachines  // Вычисляемое значение
+                NotWorking = notWorkingMachines,
+                OnMaintenance = onMaintenance
             },
             Summary = new
             {
-                TotalSales = totalSales,      // Количество транзакций
-                TotalRevenue = totalRevenue,  // Общая выручка в рублях
-                AverageSale = totalSales > 0 ? totalRevenue / totalSales : 0  // Средний чек
+                TotalSales = totalIncome,
+                ChangeAmount = changeAmount,
+                YesterdayRevenue = yesterdayRevenue,
+                SalesCount = yesterdaySalesCount,
+                TotalCollection = Math.Round(yesterdayRevenue * 0.25m, 0),
+                CollectionCount = workingMachines > 0 ? Math.Max(1, workingMachines / 3) : 0,
+                MaintenanceCount = maintenanceCount
             },
-            RecentNews = recentNews
+            SalesDynamics = salesDynamics,
+            News = recentNews
         });
     }
 

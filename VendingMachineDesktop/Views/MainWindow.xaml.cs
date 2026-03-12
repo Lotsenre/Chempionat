@@ -41,6 +41,14 @@ public partial class MainWindow : Window
     {
         if (sender is Button button && button.Tag is string tag)
         {
+            // Проверка прав доступа перед навигацией
+            if (!HasAccessTo(tag))
+            {
+                MessageBox.Show("У вас нет доступа к данному разделу.", "Доступ запрещён",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             switch (tag)
             {
                 case "Dashboard":
@@ -52,11 +60,11 @@ public partial class MainWindow : Window
                     UpdateBreadcrumb("Главная / Монитор ТА");
                     break;
                 case "Reports":
-                    ContentFrame.Navigate(new Pages.UnderDevelopmentPage("Детальные отчеты"));
+                    ContentFrame.Navigate(new Pages.ReportsPage());
                     UpdateBreadcrumb("Главная / Детальные отчеты");
                     break;
                 case "Inventory":
-                    ContentFrame.Navigate(new Pages.UnderDevelopmentPage("Учет ТМЦ"));
+                    ContentFrame.Navigate(new Pages.InventoryPage());
                     UpdateBreadcrumb("Главная / Учет ТМЦ");
                     break;
                 case "VendingMachines":
@@ -68,19 +76,33 @@ public partial class MainWindow : Window
                     UpdateBreadcrumb("Администрирование / Компании");
                     break;
                 case "Users":
-                    ContentFrame.Navigate(new Pages.UnderDevelopmentPage("Пользователи"));
+                    ContentFrame.Navigate(new Pages.UsersPage());
                     UpdateBreadcrumb("Администрирование / Пользователи");
                     break;
                 case "Modems":
-                    ContentFrame.Navigate(new Pages.UnderDevelopmentPage("Модемы"));
+                    ContentFrame.Navigate(new Pages.ModemsPage());
                     UpdateBreadcrumb("Администрирование / Модемы");
                     break;
-                case "Additional":
-                    ContentFrame.Navigate(new Pages.UnderDevelopmentPage("Дополнительные"));
-                    UpdateBreadcrumb("Администрирование / Дополнительные");
+                case "Contracts":
+                    ContentFrame.Navigate(new Pages.ContractsPage());
+                    UpdateBreadcrumb("Администрирование / Контракты");
                     break;
             }
         }
+    }
+
+    /// <summary>
+    /// Проверяет, имеет ли текущий пользователь доступ к указанному разделу.
+    /// </summary>
+    private bool HasAccessTo(string section)
+    {
+        return section switch
+        {
+            "Dashboard" or "Monitor" => true, // Все роли
+            "Reports" or "Inventory" or "VendingMachines" or "Modems" => _viewModel.CanAccessReports,
+            "Companies" or "Contracts" or "Users" => _viewModel.IsAdmin,
+            _ => false
+        };
     }
 
     private void UserMenuButton_Click(object sender, RoutedEventArgs e)

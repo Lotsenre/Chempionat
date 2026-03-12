@@ -55,6 +55,9 @@ public partial class LoginViewModel : ObservableObject
             {
                 try
                 {
+                    // Инициализируем RoleHelper для проверки прав на страницах
+                    RoleHelper.Initialize(_authService);
+
                     // Успешная авторизация - открываем главное окно
                     // Передаем текущий AuthService чтобы сохранить данные пользователя
                     var mainWindow = new MainWindow(_authService);

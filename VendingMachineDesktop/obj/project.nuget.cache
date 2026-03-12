@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HuQLqf9JkAU=",
+  "dgSpecHash": "z5xZ+aOU6W0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ernesto\\Desktop\\Chempionat\\VendingMachineDesktop\\VendingMachineDesktop.csproj",
+  "projectFilePath": "C:\\Users\\Ernesto\\Desktop\\Курсач\\VendingMachineDesktop\\VendingMachineDesktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ernesto\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\Ernesto\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
@@ -41,9 +41,9 @@
       "code": "NU1603",
       "level": "Warning",
       "message": "VendingMachineDesktop зависит от LiveChartsCore.SkiaSharpView.WPF (>= 2.0.0-rc2.2), но версия LiveChartsCore.SkiaSharpView.WPF 2.0.0-rc2.2 не найдена. Использовалась версия LiveChartsCore.SkiaSharpView.WPF 2.0.0-rc3.",
-      "projectPath": "C:\\Users\\Ernesto\\Desktop\\Chempionat\\VendingMachineDesktop\\VendingMachineDesktop.csproj",
+      "projectPath": "C:\\Users\\Ernesto\\Desktop\\Курсач\\VendingMachineDesktop\\VendingMachineDesktop.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Ernesto\\Desktop\\Chempionat\\VendingMachineDesktop\\VendingMachineDesktop.csproj",
+      "filePath": "C:\\Users\\Ernesto\\Desktop\\Курсач\\VendingMachineDesktop\\VendingMachineDesktop.csproj",
       "libraryId": "LiveChartsCore.SkiaSharpView.WPF",
       "targetGraphs": [
         "net8.0-windows7.0"

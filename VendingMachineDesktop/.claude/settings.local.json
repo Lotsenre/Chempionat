@@ -6,7 +6,8 @@
       "Bash(dotnet build:*)",
       "Bash(PGPASSWORD=root psql:*)",
       "Bash(where psql)",
-      "Bash(PGPASSWORD=root \"C:/Program Files/PostgreSQL/18/bin/psql.exe\":*)"
+      "Bash(PGPASSWORD=root \"C:/Program Files/PostgreSQL/18/bin/psql.exe\":*)",
+      "Bash(wc:*)"
     ]
   }
 }

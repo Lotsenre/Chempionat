@@ -140,6 +140,19 @@ public partial class MonitorViewModel : ObservableObject
     [ObservableProperty]
     private bool _showNoResultsMessage;
 
+    // Режим отображения: таблица или плитки
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(IsTileView))]
+    private bool _isTableView = true;
+
+    public bool IsTileView => !IsTableView;
+
+    [RelayCommand]
+    private void SetTableView() => IsTableView = true;
+
+    [RelayCommand]
+    private void SetTileView() => IsTableView = false;
+
     partial void OnSelectAllChanged(bool value)
     {
         foreach (var item in MonitorData)
@@ -166,29 +179,34 @@ public partial class MonitorViewModel : ObservableObject
         IsLoading = true;
         try
         {
-            // Load companies
-            var companiesResult = await _apiService.GetAsync<List<Company>>("companies");
-            if (companiesResult != null)
-            {
-                Companies = new ObservableCollection<Company>(companiesResult);
-                if (Companies.Count > 0)
-                {
-                    SelectedCompany = Companies[0];
-                }
-            }
-
             // Load vending machines and convert to monitor data
             var machines = await _apiService.GetAsync<List<VendingMachine>>("vendingmachines");
             if (machines != null)
             {
                 _allMonitorData = machines.Select(m => CreateMonitorData(m)).ToList();
+
+                // Строим список компаний из уникальных значений
+                var companyNames = _allMonitorData
+                    .Select(m => m.Company)
+                    .Where(c => !string.IsNullOrWhiteSpace(c))
+                    .Distinct()
+                    .OrderBy(c => c)
+                    .ToList();
+
+                Companies = new ObservableCollection<Company>();
+                Companies.Add(new Company { Id = Guid.Empty, Name = "Все компании", Code = "ALL" });
+                foreach (var name in companyNames)
+                {
+                    Companies.Add(new Company { Id = Guid.NewGuid(), Name = name, Code = name });
+                }
+                SelectedCompany = Companies[0]; // "Все компании"
+
                 ApplyFiltersInternal();
             }
         }
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine($"Monitor load error: {ex.Message}");
-            // Generate mock data if API fails
             GenerateMockData();
         }
         finally
@@ -202,23 +220,30 @@ public partial class MonitorViewModel : ObservableObject
         var random = Random.Shared;
         var operators = new[] { "МТС", "Билайн", "Мегафон", "Теле2" };
         var states = new[] { "Sale", "Service", "Encashment", "Bills", "Coins", "Change" };
-        var addresses = new[] { "Москва, Комсомольская пл.", "СПб, Невский пр.", "Казань, ул. Баумана", "Нижний Новгород, пл. Минина" };
         var connectionTypes = new[] { "MDB", "EXE_PH", "EXE_ST" };
-        var machineStatuses = new[] { "Working", "NotWorking", "OnMaintenance" };
+
+        // Используем реальный статус из БД
+        var machineStatus = machine.Status switch
+        {
+            "Working" => "Working",
+            "NotWorking" => "NotWorking",
+            _ => "OnMaintenance"
+        };
 
         return new VendingMachineMonitor
         {
             Id = machine.Id,
-            Code = $"{random.Next(90000, 99999)}",
+            Code = machine.SerialNumber,
             Name = machine.Name,
-            Address = addresses[random.Next(addresses.Length)],
+            Address = !string.IsNullOrEmpty(machine.Location) ? machine.Location : "Адрес не указан",
+            Company = !string.IsNullOrEmpty(machine.Company) ? machine.Company : "Без компании",
             IsSelected = false,
             MobileOperator = operators[random.Next(operators.Length)],
             SignalStrength = random.Next(1, 6),
-            IsOnline = random.Next(100) > 20,
+            IsOnline = machineStatus == "Working" || random.Next(100) > 40,
             CurrentState = states[random.Next(states.Length)],
             ConnectionType = connectionTypes[random.Next(connectionTypes.Length)],
-            MachineStatus = machineStatuses[random.Next(machineStatuses.Length)],
+            MachineStatus = machineStatus,
             LoadPercent = random.Next(5, 100),
             LoadInfo = $"{random.Next(1, 10)} мин. {random.Next(10, 59)} сек.",
             HasLowGoods = random.Next(100) < 30,
@@ -388,6 +413,12 @@ public partial class MonitorViewModel : ObservableObject
     {
         var filtered = _allMonitorData.AsEnumerable();
 
+        // Фильтр по компании
+        if (SelectedCompany != null && SelectedCompany.Code != "ALL")
+        {
+            filtered = filtered.Where(m => m.Company == SelectedCompany.Name);
+        }
+
         // Проверяем, активны ли фильтры по состоянию
         bool hasStatusFilter = FilterStatusGreen || FilterStatusRed || FilterStatusBlue;
         if (hasStatusFilter)
@@ -547,6 +578,11 @@ public partial class MonitorViewModel : ObservableObject
     }
 
     partial void OnSelectedCompanyChanged(Company? value)
+    {
+        ApplyFiltersInternal();
+    }
+
+    partial void OnSelectedSortOptionChanged(SortOption? value)
     {
         ApplyFiltersInternal();
     }

@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:converters="clr-namespace:VendingMachineDesktop.Utilities.Converters"
+      xmlns:services="clr-namespace:VendingMachineDesktop.Services"
       xmlns:sys="clr-namespace:System;assembly=mscorlib"
       Background="#F5F5F5">
 
@@ -54,7 +55,7 @@
                                    Margin="0,0,10,0"/>
                         <ComboBox Width="80"
                                   SelectedItem="{Binding PageSize, Mode=TwoWay}"
-                                  Style="{StaticResource MaterialDesignOutlinedComboBox}">
+                                  Style="{StaticResource WhiteOutlinedComboBox}">
                             <sys:Int32>10</sys:Int32>
                             <sys:Int32>25</sys:Int32>
                             <sys:Int32>50</sys:Int32>
@@ -73,11 +74,12 @@
 
                     <!-- Right: Action Buttons and View Toggle -->
                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <!-- Add Button -->
+                        <!-- Add Button (Admin + Engineer) -->
                         <Button Command="{Binding AddCommand}"
                                 Style="{StaticResource MaterialDesignRaisedButton}"
                                 Margin="0,0,10,0"
-                                Height="36">
+                                Height="36"
+                                Visibility="{Binding CanEdit, Source={x:Static services:RoleHelper.Instance}, Converter={StaticResource BoolToVisibilityConverter}}">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Plus" VerticalAlignment="Center" Margin="0,0,6,0"/>
                                 <TextBlock Text="Добавить"/>
@@ -221,36 +223,39 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <!-- Edit Button -->
+                                    <!-- Edit Button (Admin + Engineer) -->
                                     <Button Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignIconButton}"
                                             ToolTip="Редактировать"
                                             Width="32"
                                             Height="32"
-                                            Margin="4,0">
+                                            Margin="4,0"
+                                            Visibility="{Binding CanEdit, Source={x:Static services:RoleHelper.Instance}, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <materialDesign:PackIcon Kind="Pencil" Width="18" Height="18" Foreground="#2196F3"/>
                                     </Button>
 
-                                    <!-- Delete Button -->
+                                    <!-- Delete Button (только Admin) -->
                                     <Button Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=Page}}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignIconButton}"
                                             ToolTip="Удалить"
                                             Width="32"
                                             Height="32"
-                                            Margin="4,0">
+                                            Margin="4,0"
+                                            Visibility="{Binding CanDelete, Source={x:Static services:RoleHelper.Instance}, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <materialDesign:PackIcon Kind="Delete" Width="18" Height="18" Foreground="#F44336"/>
                                     </Button>
 
-                                    <!-- Detach Modem Button -->
+                                    <!-- Detach Modem Button (Admin + Engineer) -->
                                     <Button Command="{Binding DataContext.DetachModemCommand, RelativeSource={RelativeSource AncestorType=Page}}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignIconButton}"
                                             ToolTip="Отвязать модем"
                                             Width="32"
                                             Height="32"
-                                            Margin="4,0">
+                                            Margin="4,0"
+                                            Visibility="{Binding CanEdit, Source={x:Static services:RoleHelper.Instance}, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <materialDesign:PackIcon Kind="LinkVariantOff" Width="18" Height="18" Foreground="#FF9800"/>
                                     </Button>
                                 </StackPanel>
@@ -325,21 +330,24 @@
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignIconButton}"
                                             ToolTip="Редактировать"
-                                            Width="32" Height="32">
+                                            Width="32" Height="32"
+                                            Visibility="{Binding CanEdit, Source={x:Static services:RoleHelper.Instance}, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <materialDesign:PackIcon Kind="Pencil" Width="18" Height="18" Foreground="#2196F3"/>
                                     </Button>
                                     <Button Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=Page}}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignIconButton}"
                                             ToolTip="Удалить"
-                                            Width="32" Height="32">
+                                            Width="32" Height="32"
+                                            Visibility="{Binding CanDelete, Source={x:Static services:RoleHelper.Instance}, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <materialDesign:PackIcon Kind="Delete" Width="18" Height="18" Foreground="#F44336"/>
                                     </Button>
                                     <Button Command="{Binding DataContext.DetachModemCommand, RelativeSource={RelativeSource AncestorType=Page}}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignIconButton}"
                                             ToolTip="Отвязать модем"
-                                            Width="32" Height="32">
+                                            Width="32" Height="32"
+                                            Visibility="{Binding CanEdit, Source={x:Static services:RoleHelper.Instance}, Converter={StaticResource BoolToVisibilityConverter}}">
                                         <materialDesign:PackIcon Kind="LinkVariantOff" Width="18" Height="18" Foreground="#FF9800"/>
                                     </Button>
                                 </StackPanel>

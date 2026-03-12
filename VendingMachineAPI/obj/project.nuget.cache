@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sDYo6U0yeqg=",
+  "dgSpecHash": "Z2TfRU7SYGM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ernesto\\Desktop\\Chempionat\\VendingMachineAPI\\VendingMachineAPI.csproj",
+  "projectFilePath": "C:\\Users\\Ernesto\\Desktop\\Курсач\\VendingMachineAPI\\VendingMachineAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ernesto\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Ernesto\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
